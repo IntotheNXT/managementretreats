@@ -147,11 +147,20 @@ h3 { font-size: 22px; line-height: 1.2; }
   align-items: center;
   text-decoration: none;
   background: rgba(255,255,255,.22);
-  transition: background .2s ease, transform .2s ease;
+  transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
-.topic-chip::after { content: "↗"; color: var(--olive); font-size: 15px; }
-.topic-chip:hover { background: var(--sage); }
-.topic-chip > span { color: var(--olive); font-size: 11px; }
+.topic-chip::after { content: "↗"; color: var(--olive); font-size: 15px; transition: color .2s ease, transform .2s ease; }
+.topic-chip:hover {
+  background: var(--dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(28,34,28,.13);
+  position: relative;
+  z-index: 2;
+}
+.topic-chip:hover::after { color: var(--accent); transform: translate(2px,-2px); }
+.topic-chip > span { color: var(--olive); font-size: 11px; transition: color .2s ease; }
+.topic-chip:hover > span { color: #b7c0b4; }
 .topic-chip strong { font-size: 16px; font-weight: 600; }
 
 .facilitator-section { background: var(--bg); }
@@ -178,7 +187,21 @@ h3 { font-size: 22px; line-height: 1.2; }
 .section-cta { margin-top: 28px; }
 
 .alternative-tags { display: flex; flex-wrap: wrap; gap: 12px; }
-.alternative-tags span { border: 1px solid rgba(255,255,255,.22); padding: 13px 18px; border-radius: 999px; font-size: 13px; color: #e9ede8; }
+.alternative-tags span {
+  border: 1px solid rgba(255,255,255,.22);
+  padding: 13px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #e9ede8;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.alternative-tags span:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(0,0,0,.18);
+}
 
 .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .process-grid article { padding: 28px; background: white; border: 1px solid var(--line); border-radius: var(--radius); min-height: 220px; }
