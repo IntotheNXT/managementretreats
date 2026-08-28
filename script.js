@@ -37,11 +37,8 @@ if (mainNav && !mainNav.querySelector('.lang-switch')) {
   langSwitch.append(nlLink, separator, enLink);
 
   const cta = mainNav.querySelector('.btn-small');
-  if (cta) {
-    mainNav.insertBefore(langSwitch, cta);
-  } else {
-    mainNav.appendChild(langSwitch);
-  }
+  if (cta) mainNav.insertBefore(langSwitch, cta);
+  else mainNav.appendChild(langSwitch);
 }
 
 if (menuToggle && mainNav) {
@@ -56,12 +53,6 @@ if (menuToggle && mainNav) {
       menuToggle.setAttribute('aria-expanded', 'false');
     });
   });
-}
-
-const tijnImage = document.querySelector('img[alt="Tijn Akersloot aan het strand in Zandvoort"]');
-if (tijnImage) {
-  tijnImage.src = 'assets/images/tijnakersloot-interieur-dark.png';
-  tijnImage.alt = 'Interieur van Tijn Akersloot in Zandvoort';
 }
 
 const year = document.getElementById('year');
