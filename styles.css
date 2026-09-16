@@ -178,8 +178,13 @@ h3 { font-size: 22px; line-height: 1.2; }
   min-height: 250px;
   display: flex;
   flex-direction: column;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .retreat-card:hover {
+  background: var(--sage);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(28, 34, 28, 0.08);
 }
-.retreat-card.featured { background: var(--sage); }
 .card-label { font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--olive); }
 .retreat-card h3 { margin-top: 38px; font-family: "DM Serif Display", serif; font-size: 32px; }
 .retreat-card p { color: var(--muted); margin-top: 13px; }
