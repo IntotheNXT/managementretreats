@@ -1,10 +1,9 @@
 .facilitator-profiles {
-  grid-column: 1 / -1;
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 52px;
+  margin: 52px auto 0;
+  max-width: 900px;
 }
 
 .facilitator-card {
@@ -30,6 +29,7 @@
   background-size: 400% 200%;
   background-repeat: no-repeat;
   background-color: #e4dfd5;
+  filter: grayscale(100%);
 }
 
 .facilitator-photo--fons-trompenaars { background-position: 0% 0%; }
@@ -44,7 +44,7 @@
   background-image: url("https://images.squarespace-cdn.com/content/v1/660190694c04e609cf7b44ba/279f179d-172e-4899-b7a7-6fd487a43a23/Sabine-3-scaled.jpg");
   background-size: cover;
   background-position: center;
-}
+  }
 
 .facilitator-card-body {
   padding: 20px 20px 18px;
