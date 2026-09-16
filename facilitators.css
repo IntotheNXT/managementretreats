@@ -2,8 +2,12 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin: 52px auto 0;
+
+  grid-column: 1 / -1;
+  width: 100%;
   max-width: 900px;
+  margin: 52px auto 0;
+  justify-self: center;
 }
 
 .facilitator-card {
@@ -102,7 +106,7 @@
 }
 
 @media (max-width: 700px) {
-  .facilitator-profiles { grid-template-columns: 1fr; margin-top: 36px; }
+  .facilitator-profiles { grid-template-columns: 1fr; margin-top: 36px auto 0; }
   .facilitator-card h3 { font-size: 30px; }
   .facilitator-photo { aspect-ratio: 1.15 / 1; }
 }
