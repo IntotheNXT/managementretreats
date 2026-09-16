@@ -26,10 +26,12 @@
   box-shadow: 0 18px 38px rgba(28,34,28,.09);
 }
 
+.facilitator-card[hidden] { display: none; }
+
 .facilitator-photo {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-image: url("assets/images/facilitators/facilitator-sprite.jpg");
+  background-image: url("assets/images/facilitator-sprite-bw-hq.jpg");
   background-size: 400% 200%;
   background-repeat: no-repeat;
   background-color: #e4dfd5;
@@ -48,7 +50,12 @@
   background-image: url("https://images.squarespace-cdn.com/content/v1/660190694c04e609cf7b44ba/279f179d-172e-4899-b7a7-6fd487a43a23/Sabine-3-scaled.jpg");
   background-size: cover;
   background-position: center;
-  }
+}
+.facilitator-photo--olivier-rikken {
+  background-image: url("assets/images/facilitators/olivier-rikken.png");
+  background-size: cover;
+  background-position: center;
+}
 
 .facilitator-card-body {
   padding: 20px 20px 18px;
@@ -106,7 +113,7 @@
 }
 
 @media (max-width: 700px) {
-  .facilitator-profiles { grid-template-columns: 1fr; margin-top: 36px auto 0; }
+  .facilitator-profiles { grid-template-columns: 1fr; margin: 36px auto 0; }
   .facilitator-card h3 { font-size: 30px; }
   .facilitator-photo { aspect-ratio: 1.15 / 1; }
 }
