@@ -1,0 +1,773 @@
+{
+  "version": "2026-09-23",
+  "questions": [
+    {
+      "question": "Waar gaan we naartoe?",
+      "categories": [
+        "Strategie & Executie"
+      ]
+    },
+    {
+      "question": "Waar komen groei en vernieuwing vandaan?",
+      "categories": [
+        "Innovatie & Groei",
+        "AI & Opkomende Technologie",
+        "Commerciële Excellentie"
+      ]
+    },
+    {
+      "question": "Hoe moet de organisatie anders werken?",
+      "categories": [
+        "Cultuur, Verandering & Organisatie"
+      ]
+    },
+    {
+      "question": "Hoe maken leiders en teams dit mogelijk?",
+      "categories": [
+        "Leiderschap & Management",
+        "Teams, Samenwerking & Welzijn",
+        "Communicatie & Invloed"
+      ]
+    }
+  ],
+  "categories": [
+    "Strategie & Executie",
+    "Innovatie & Groei",
+    "AI & Opkomende Technologie",
+    "Commerciële Excellentie",
+    "Cultuur, Verandering & Organisatie",
+    "Leiderschap & Management",
+    "Teams, Samenwerking & Welzijn",
+    "Communicatie & Invloed"
+  ],
+  "audiences": [
+    "Professionals & Functionele Teams",
+    "Managers & Teamleiders",
+    "Managementteams",
+    "Directieteams / ExCo",
+    "Raden van Commissarissen / Toezicht"
+  ],
+  "modules": [
+    {
+      "id": "building-a-visionary-company-stimulate-progress-preserve-the-core",
+      "title": "Bouwen aan een visionair bedrijf: stimuleer vooruitgang, behoud de kern",
+      "description": "Bouw aan een heldere ambitie, een levendig beeld van de toekomst, een gedragen purpose en geleefde waarden voor effectieve uitvoering.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "playing-to-win-defining-where-to-play-how-to-win",
+      "title": "Playing to Win: bepalen waar je speelt en hoe je wint",
+      "description": "Bouw een waardecreatieplan met de 'Playing to Win'-methodologie.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "future-back-strategy",
+      "title": "Future-Back Strategy",
+      "description": "Extrapoleer niet vanuit het huidige businessmodel, maar stel je toekomstige businessmodellen voor op basis van customer jobs-to-be-done en werk terug naar de benodigde innovatieportfolio en het actieplan.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "understanding-disruption",
+      "title": "Disruptie begrijpen",
+      "description": "Herken disruptieve bedreigingen en kansen vroegtijdig met Clayton Christensens theorie van disruptie.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "strategy-and-decision-making-under-uncertainty",
+      "title": "Strategie en besluitvorming onder onzekerheid",
+      "description": "Neem sneller betere beslissingen en bouw een portfolio met keuzemogelijkheden wanneer informatie onvolledig is.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "strategy-execution-okrs-ogsm",
+      "title": "Strategie-executie: OKRs & OGSM",
+      "description": "Vertaal strategische keuzes naar prioriteiten, doelen, meetpunten, eigenaarschap en aanpassing met methodes zoals OKRs en OGSM.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme",
+        "Behdad Shahsavari"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ],
+      "tools": [
+        {
+          "label": "Probeer de OKR Coach",
+          "url": "https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/new_okrcoach/canvas?__version__=2&enableFileAttachment=false&cliAgent=true"
+        },
+        {
+          "label": "Probeer de OGSM Coach",
+          "url": "https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/cr428_ogsmcoach-demo_Gzl0o5/canvas?__version__=2&enableFileAttachment=false&cliAgent=true"
+        }
+      ]
+    },
+    {
+      "id": "rockefeller-habits-high-performance-management-cadence",
+      "title": "Rockefeller Habits: een high-performance managementritme",
+      "description": "Bouw managementritmes, prioriteiten en accountability voor consistente uitvoering.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ],
+      "tools": [
+        {
+          "label": "Probeer de Management Cadence Check",
+          "url": "https://management-cadence-check.vercel.app/"
+        }
+      ]
+    },
+    {
+      "id": "adaptive-performance-management-beyond-budgeting",
+      "title": "Adaptief Performance Management / Beyond Budgeting",
+      "description": "Verbeter de jaarlijkse planningscyclus door processen voor doelen, forecasting, resourceallocatie, evaluatie en beloning opnieuw te ontwerpen.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "systems-thinking",
+      "title": "Systeemdenken",
+      "description": "Leer verborgen feedbackloops, afhankelijkheden en onbedoelde gevolgen van goedbedoelde managementacties te herkennen.",
+      "category": "Strategie & Executie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "entrepreneurship-innovation-principles",
+      "title": "Principes van ondernemerschap & innovatie",
+      "description": "Bouw een praktische basis in ondernemerschap en innovatie: customer jobs, omstandigheden, het Business Model Canvas, testen en risico's verkleinen.",
+      "category": "Innovatie & Groei",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "business-model-innovation",
+      "title": "Businessmodelinnovatie",
+      "description": "Leer een gemeenschappelijke taal en methode te gebruiken om effectief en efficiënt nieuwe manieren te verkennen om klantbehoeften te bedienen.",
+      "category": "Innovatie & Groei",
+      "facilitators": [
+        "Bas Kemme",
+        "Behdad Shahsavari",
+        "Nemos Kostoulas"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "experimentation-from-idea-to-evidence",
+      "title": "Experimenteren: van idee naar bewijs",
+      "description": "Leer risico's verkleinen door aannames met hoge impact maar lage zekerheid te vertalen naar tests en bewijs voordat grote investeringen worden gedaan.",
+      "category": "Innovatie & Groei",
+      "facilitators": [
+        "Bas Kemme",
+        "Behdad Shahsavari",
+        "Nemos Kostoulas"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "innovation-portfolio-management",
+      "title": "Innovatieportfoliomanagement",
+      "description": "Bouw en manage een innovatieportfolio dat groot genoeg, gebalanceerd en geoptimaliseerd is om de groeistrategie betrouwbaar te realiseren.",
+      "category": "Innovatie & Groei",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "leading-entrepreneurial-organisations-disruptive-innovation",
+      "title": "Ondernemende organisaties leiden & disruptieve innovatie",
+      "description": "Creëer de voorwaarden, structuren en leiderschapspraktijken waarmee experimenteren en disruptieve nieuwe groei zich kunnen ontwikkelen naast de eisen van de kernactiviteiten.",
+      "category": "Innovatie & Groei",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "ai-literacy-practical-application",
+      "title": "AI-geletterdheid & praktische toepassing",
+      "description": "Begrijp wat AI wel en niet kan, gebruik het verantwoord, beoordeel output en identificeer praktische toepassingen die het echte werk verbeteren.",
+      "category": "AI & Opkomende Technologie",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "managing-with-ai",
+      "title": "Managen met AI",
+      "description": "Gebruik, superviseer en beoordeel AI op een verstandige manier in het dagelijkse werk.",
+      "category": "AI & Opkomende Technologie",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Bas Kemme",
+        "Marco van Hurne"
+      ],
+      "audiences": [
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "managing-ai-agents",
+      "title": "AI-agents managen",
+      "description": "Delegeer aan, superviseer en evalueer AI-agents.",
+      "category": "AI & Opkomende Technologie",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Dr. Olivier Rikken",
+        "Marco van Hurne"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "building-the-hybrid-human-agent-organisation",
+      "title": "De hybride mens-agentorganisatie bouwen",
+      "description": "Herontwerp taken, processen en rollen tussen mensen en AI en adresseer de gevolgen voor structuur, accountability en het operating model.",
+      "category": "AI & Opkomende Technologie",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Dr. Olivier Rikken",
+        "Marco van Hurne",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "leading-ai-transformation-adoption",
+      "title": "AI-transformatie & adoptie leiden",
+      "description": "Begrijp de menselijke en organisatorische dynamiek die bepaalt of AI daadwerkelijk wordt geadopteerd.",
+      "category": "AI & Opkomende Technologie",
+      "facilitators": [
+        "Bas Kemme",
+        "Marco van Hurne"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "ai-governance-oversight",
+      "title": "AI-governance & toezicht",
+      "description": "Begrijp de kansen, verantwoordelijkheden, risico's en toezichtkeuzes die leiders moeten maken om AI verantwoord te besturen.",
+      "category": "AI & Opkomende Technologie",
+      "facilitators": [
+        "Dr. Olivier Rikken",
+        "Behdad Shahsavari",
+        "Bas Kemme",
+        "Marco van Hurne"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "jobs-to-be-done-as-the-foundation-for-growth",
+      "title": "Jobs to Be Done als fundament voor groei",
+      "description": "Begrijp welke vooruitgang klanten proberen te boeken en vertaal dat inzicht naar betere klantproposities, communicatie en innovatiekansen.",
+      "category": "Commerciële Excellentie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "pricing",
+      "title": "Prijsstelling",
+      "description": "Versterk de prijslogica vanuit klantwaarde, economie en marktgedrag.",
+      "category": "Commerciële Excellentie",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "sales-change-understanding-the-four-forces-of-adoption",
+      "title": "Sales & verandering: de vier krachten van adoptie begrijpen",
+      "description": "Gebruik de vier krachten die bepalen waarom mensen het oude loslaten en het nieuwe omarmen om klanten of medewerkers voor je propositie te winnen.",
+      "category": "Commerciële Excellentie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "building-a-customer-centric-and-sales-oriented-organisation",
+      "title": "Een klantgerichte en salesgerichte organisatie bouwen",
+      "description": "Vertaal klantgerichtheid naar routines, informatie en besluiten en maak commerciële oriëntatie tot een organisatiebrede capability.",
+      "category": "Commerciële Excellentie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "adaptability-audit",
+      "title": "Adaptability Audit",
+      "description": "Identificeer verborgen barrières tussen signaal en actie en vind het hefboompunt dat het aanpassingsvermogen vergroot.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Bas Kemme",
+        "Fons Trompenaars",
+        "Behdad Shahsavari"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "bureaucracy-busting",
+      "title": "Bureaucracy Busting",
+      "description": "Ontwerp je organisatie voor snelheid én veiligheid, samenhang én autonomie, purpose én resultaat.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "culture-as-a-management-system",
+      "title": "Cultuur als managementsysteem",
+      "description": "Begrijp cultuur en leer die te managen als een belangrijke enabler van bedrijfsprestaties.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "current-and-desired-culture-change",
+      "title": "Van huidige naar gewenste cultuur",
+      "description": "Breng feitelijk in kaart wat de strategie ondersteunt en wat moet veranderen en vertaal dit naar pragmatische cultuurinterventies.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "purpose-and-values-for-performance",
+      "title": "Purpose en waarden voor performance",
+      "description": "Begrijp wat een purpose-driven organisatie betekent en hoe je die bouwt met waarden die het gedrag richting geven dat nodig is voor succesvolle uitvoering.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "tension-to-traction-a-different-thinking-for-breakthrough-performance",
+      "title": "Tension to Traction: anders denken voor doorbraakprestaties",
+      "description": "Leer dilemma's te navigeren door twee positieve maar concurrerende eisen met elkaar te verbinden in plaats van te kiezen voor een compromis. Inclusief lessen uit recente CEO-interviews, zoals vastgelegd in het aankomende boek Tension to Traction.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "leading-change",
+      "title": "Verandering leiden",
+      "description": "Creëer betekenis en beïnvloed de sociale dynamiek die bepaalt of verandering wordt geadopteerd.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Genieke Hertoghs",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "culture-for-m-a-value-creation",
+      "title": "Cultuur voor waardecreatie bij M&A",
+      "description": "Maak verschillen zichtbaar als bron van dealwaarde door voort te bouwen op het beste van beide organisaties.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "learning-from-netflix-culture",
+      "title": "Leren van de Netflix-cultuur",
+      "description": "Leer van de unieke cultuur van Netflix en vertaal relevante lessen naar je eigen organisatie.",
+      "category": "Cultuur, Verandering & Organisatie",
+      "facilitators": [
+        "Carmen Verrier"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "motivation-what-really-drives-people",
+      "title": "Motivatie: wat mensen echt drijft",
+      "description": "Begrijp de fundamentele bronnen van intrinsieke motivatie en hoe leiderschap en management performance kunnen vrijmaken.",
+      "category": "Leiderschap & Management",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "delegation-autonomy-trust-accountability",
+      "title": "Delegeren, autonomie, vertrouwen & accountability",
+      "description": "Delegeer betekenisvolle verantwoordelijkheid en bouw vertrouwen, met helderheid over uitkomsten, grenzen, standaarden en accountability.",
+      "category": "Leiderschap & Management",
+      "facilitators": [
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "performance-conversations",
+      "title": "Performancegesprekken",
+      "description": "Voer heldere gesprekken over verwachtingen, prestaties, ontwikkeling en accountability.",
+      "category": "Leiderschap & Management",
+      "facilitators": [
+        "Robbert Wolff"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "building-high-performing-teams",
+      "title": "High-performing teams bouwen",
+      "description": "Versterk vertrouwen, verbondenheid, productief debat, cross-functionele samenwerking, commitment en accountability.",
+      "category": "Teams, Samenwerking & Welzijn",
+      "facilitators": [
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "psychological-safety",
+      "title": "Psychologische veiligheid",
+      "description": "Vergroot openheid, het uitspreken van zorgen en leren, terwijl hoge standaarden behouden blijven.",
+      "category": "Teams, Samenwerking & Welzijn",
+      "facilitators": [
+        "Sabine de Rooij",
+        "Robbert Wolff"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "sustainable-performance-burnout-prevention",
+      "title": "Duurzame performance & burn-outpreventie",
+      "description": "Bouw gezondere manieren van werken die energie, performance en accountability beschermen.",
+      "category": "Teams, Samenwerking & Welzijn",
+      "facilitators": [
+        "Sabine de Rooij",
+        "Robbert Wolff"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "constructive-conflict-and-dialogue",
+      "title": "Constructief conflict en dialoog",
+      "description": "Gebruik verschil van mening productief zonder kunstmatige harmonie of destructief conflict. Werk met pull- versus push-technieken.",
+      "category": "Teams, Samenwerking & Welzijn",
+      "facilitators": [
+        "Genieke Hertoghs",
+        "Marijke Shahsavari-Jansen",
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo",
+        "Raden van Commissarissen / Toezicht"
+      ]
+    },
+    {
+      "id": "effective-meetings-decisions-not-theatre",
+      "title": "Effectieve meetings: besluiten, geen theater",
+      "description": "Ontwerp meetings rond besluiten, eigenaarschap en opvolging.",
+      "category": "Teams, Samenwerking & Welzijn",
+      "facilitators": [
+        "Marijke Shahsavari-Jansen",
+        "Bas Kemme",
+        "Robbert Wolff"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "communicating-ideas-that-land",
+      "title": "Ideeën communiceren die landen",
+      "description": "Structureer boodschappen zodat anderen ze kunnen begrijpen, bevragen en omzetten in actie.",
+      "category": "Communicatie & Invloed",
+      "facilitators": [
+        "Marijke Shahsavari-Jansen",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "influencing-stakeholder-management",
+      "title": "Beïnvloeden & stakeholdermanagement",
+      "description": "Bouw draagvlak zonder alleen op formele autoriteit te leunen. Werk met pull- versus push-technieken.",
+      "category": "Communicatie & Invloed",
+      "facilitators": [
+        "Genieke Hertoghs",
+        "Marijke Shahsavari-Jansen",
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "giving-receiving-feedback",
+      "title": "Feedback geven & ontvangen",
+      "description": "Maak feedback frequent, bruikbaar en veilig genoeg om prestaties te verbeteren.",
+      "category": "Communicatie & Invloed",
+      "facilitators": [
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams"
+      ]
+    },
+    {
+      "id": "negotiation-tough-conversations",
+      "title": "Onderhandelen & lastige gesprekken",
+      "description": "Navigeer concurrerende belangen en afwegingen terwijl je relaties beschermt.",
+      "category": "Communicatie & Invloed",
+      "facilitators": [
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managers & Teamleiders",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    },
+    {
+      "id": "the-power-of-humour",
+      "title": "De kracht van humor",
+      "description": "Gebruik humor op een passende manier om relaties, veerkracht en openheid te versterken.",
+      "category": "Communicatie & Invloed",
+      "facilitators": [
+        "Pep Rosenfeld",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functionele Teams",
+        "Managementteams",
+        "Directieteams / ExCo"
+      ]
+    }
+  ]
+}
