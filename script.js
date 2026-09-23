@@ -150,5 +150,104 @@ if (facilitatorSection && !facilitatorSection.querySelector('.facilitator-profil
   });
 }
 
+
+const capabilityCatalog = document.getElementById('capability-catalog');
+
+if (capabilityCatalog) {
+  const catalogUrl = capabilityCatalog.dataset.catalog;
+
+  fetch(catalogUrl, { cache: 'no-store' })
+    .then(response => {
+      if (!response.ok) throw new Error(`Capability catalogue could not be loaded (${response.status})`);
+      return response.json();
+    })
+    .then(catalog => {
+      let selectedCategory = catalog.categories[0];
+
+      const questionHtml = catalog.questions.map((group, index) => `
+        <article class="catalog-question">
+          <span class="catalog-question-label">${group.question}</span>
+          <div class="catalog-category-list">
+            ${group.categories.map(category => `<button type="button" class="catalog-category-btn" data-category="${category}">${category}</button>`).join('')}
+            ${group.categories.length > 1 ? `<button type="button" class="catalog-category-btn catalog-group-show-all" data-category="Group:${index}">Show all</button>` : ''}
+          </div>
+        </article>`).join('');
+
+      capabilityCatalog.innerHTML = `
+        <div class="catalog-show-all-row">
+          <button type="button" class="catalog-category-btn" data-category="All">Show all</button>
+        </div>
+        <div class="catalog-question-grid">${questionHtml}</div>
+        <div class="catalog-result-head">
+          <h3 id="catalog-result-title"></h3>
+          <span class="catalog-count" id="catalog-count"></span>
+        </div>
+        <div class="catalog-modules" id="catalog-modules"></div>`;
+
+      const resultTitle = capabilityCatalog.querySelector('#catalog-result-title');
+      const count = capabilityCatalog.querySelector('#catalog-count');
+      const modulesEl = capabilityCatalog.querySelector('#catalog-modules');
+      const categoryButtons = [...capabilityCatalog.querySelectorAll('.catalog-category-btn')];
+
+      const moduleCard = module => {
+        const facilitators = (module.facilitators || []).length
+          ? `<div class="catalog-facilitators"><strong>Facilitators</strong> ${module.facilitators.join(' · ')}</div>`
+          : '';
+        return `<article class="catalog-module"><h4>${module.title}</h4><p>${module.description}</p>${facilitators}</article>`;
+      };
+
+      function renderGroups(categories, matches) {
+        modulesEl.classList.add('show-all');
+        modulesEl.innerHTML = categories.map(category => {
+          const group = matches.filter(module => module.category === category);
+          if (!group.length) return '';
+          return `<section class="catalog-all-group"><h4 class="catalog-all-group-title">${category}</h4><div class="catalog-all-grid">${group.map(moduleCard).join('')}</div></section>`;
+        }).join('') || '<div class="catalog-empty">No modules are available in this group yet.</div>';
+      }
+
+      function render() {
+        categoryButtons.forEach(button => button.classList.toggle('is-active', button.dataset.category === selectedCategory));
+
+        if (selectedCategory === 'All') {
+          resultTitle.textContent = 'All capabilities';
+          count.textContent = `${catalog.modules.length} modules`;
+          renderGroups(catalog.categories, catalog.modules);
+          return;
+        }
+
+        if (selectedCategory.startsWith('Group:')) {
+          const groupIndex = Number(selectedCategory.split(':')[1]);
+          const questionGroup = catalog.questions[groupIndex];
+          const matches = catalog.modules.filter(module => questionGroup.categories.includes(module.category));
+          resultTitle.textContent = questionGroup.question;
+          count.textContent = `${matches.length} module${matches.length === 1 ? '' : 's'}`;
+          renderGroups(questionGroup.categories, matches);
+          return;
+        }
+
+        const matches = catalog.modules.filter(module => module.category === selectedCategory);
+        resultTitle.textContent = selectedCategory;
+        count.textContent = `${matches.length} module${matches.length === 1 ? '' : 's'}`;
+        modulesEl.classList.remove('show-all');
+        modulesEl.innerHTML = matches.length
+          ? matches.map(moduleCard).join('')
+          : '<div class="catalog-empty">No modules are available in this capability area yet.</div>';
+      }
+
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          selectedCategory = button.dataset.category;
+          render();
+        });
+      });
+
+      render();
+    })
+    .catch(error => {
+      console.error(error);
+      capabilityCatalog.innerHTML = '<p class="catalog-loading">The capability menu could not be loaded. Please refresh the page.</p>';
+    });
+}
+
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
