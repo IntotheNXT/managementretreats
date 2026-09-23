@@ -1,0 +1,773 @@
+{
+  "version": "2026-09-23",
+  "questions": [
+    {
+      "question": "Where are we going?",
+      "categories": [
+        "Strategy & Execution"
+      ]
+    },
+    {
+      "question": "Where will growth and renewal come from?",
+      "categories": [
+        "Innovation & Growth",
+        "AI & Emerging Technology",
+        "Commercial Excellence"
+      ]
+    },
+    {
+      "question": "How must the organisation work differently?",
+      "categories": [
+        "Culture, Change & Organisation"
+      ]
+    },
+    {
+      "question": "How do leaders and teams make that happen?",
+      "categories": [
+        "Leadership & Management",
+        "Teams, Collaboration & Wellbeing",
+        "Communication & Influence"
+      ]
+    }
+  ],
+  "categories": [
+    "Strategy & Execution",
+    "Innovation & Growth",
+    "AI & Emerging Technology",
+    "Commercial Excellence",
+    "Culture, Change & Organisation",
+    "Leadership & Management",
+    "Teams, Collaboration & Wellbeing",
+    "Communication & Influence"
+  ],
+  "audiences": [
+    "Professionals & Functional Teams",
+    "Managers & Team Leaders",
+    "Management Teams",
+    "Executive Teams / ExCo",
+    "Boards / Supervisory Boards"
+  ],
+  "modules": [
+    {
+      "id": "building-a-visionary-company-stimulate-progress-preserve-the-core",
+      "title": "Building a Visionary Company: Stimulate progress, preserve the core",
+      "description": "Build a clear aspiration, a vivid description of the future, an embraced purpose and lived values for effective execution.",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "playing-to-win-defining-where-to-play-how-to-win",
+      "title": "Playing to Win: defining where to play, how to win",
+      "description": "Build your value-creation plan applying the 'Playing to win' methodology",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "future-back-strategy",
+      "title": "Future-Back Strategy",
+      "description": "Instead of extrapolating your current business model, imagine future business models based on customer jobs-to-be-done, and work back from there to the required innovation portfolio and action plan going forward.",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "understanding-disruption",
+      "title": "Understanding Disruption",
+      "description": "Recognise disruptive threats and opportunities early applying Clayton Christensen's theory of disruption .",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "strategy-and-decision-making-under-uncertainty",
+      "title": "Strategy and Decision-Making Under Uncertainty",
+      "description": "Make faster, better decisions and create a portfolio providing optionallity when information is incomplete.",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "strategy-execution-okrs-ogsm",
+      "title": "Strategy Execution: OKRs & OGSM",
+      "description": "Translate strategic choices into priorities, objectives, measures, ownership and adaptation using approaches such as OKRs and OGSM.",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme",
+        "Behdad Shahsavari"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ],
+      "tools": [
+        {
+          "label": "Try the OKR Coach",
+          "url": "https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/new_okrcoach/canvas?__version__=2&enableFileAttachment=false&cliAgent=true"
+        },
+        {
+          "label": "Try the OGSM Coach",
+          "url": "https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/cr428_ogsmcoach-demo_Gzl0o5/canvas?__version__=2&enableFileAttachment=false&cliAgent=true"
+        }
+      ]
+    },
+    {
+      "id": "rockefeller-habits-high-performance-management-cadence",
+      "title": "Rockefeller Habits: High-Performance Management Cadence",
+      "description": "Build management rhythms, priorities and accountability for consistent execution.",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ],
+      "tools": [
+        {
+          "label": "Try the Management Cadence Check",
+          "url": "https://management-cadence-check.vercel.app/"
+        }
+      ]
+    },
+    {
+      "id": "adaptive-performance-management-beyond-budgeting",
+      "title": "Adaptive Performance Management / Beyond Budgeting",
+      "description": "Improve the annual planning cycle by redesign of targeting, forecasting, resource allocation, evaluating and rewarding processes.",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "systems-thinking",
+      "title": "Systems Thinking",
+      "description": "Learn to see hidden feedback loops, dependencies and unintended consequences of well-intended management actions.",
+      "category": "Strategy & Execution",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "entrepreneurship-innovation-principles",
+      "title": "Entrepreneurship & Innovation Principles",
+      "description": "Build a practical foundation in entrepreneurship and innovation: customer jobs, circumstances, the Business Model Canvas, testing and de-risking.",
+      "category": "Innovation & Growth",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "business-model-innovation",
+      "title": "Business Model Innovation",
+      "description": "Learn to speak a common language and method to effectively and efficiently explore opportunities to serve customer needs in new ways.",
+      "category": "Innovation & Growth",
+      "facilitators": [
+        "Bas Kemme",
+        "Behdad Shahsavari",
+        "Nemos Kostoulas"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "experimentation-from-idea-to-evidence",
+      "title": "Experimentation: From Idea to Evidence",
+      "description": "Learn to de-risk: Turn assumptions with high impact but low confidence into tests and evidence before large commitments.",
+      "category": "Innovation & Growth",
+      "facilitators": [
+        "Bas Kemme",
+        "Behdad Shahsavari",
+        "Nemos Kostoulas"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "innovation-portfolio-management",
+      "title": "Innovation Portfolio Management",
+      "description": "Build and manage an innovation portfolio that's sufficient, balanced, and optimized to reliably deliver on your growth strategy.",
+      "category": "Innovation & Growth",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "leading-entrepreneurial-organisations-disruptive-innovation",
+      "title": "Leading Entrepreneurial Organisations & Disruptive Innovation",
+      "description": "Create the conditions, structures and leadership practices that allow experimentation and disruptive new growth to develop alongside the demands of the core business.",
+      "category": "Innovation & Growth",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "ai-literacy-practical-application",
+      "title": "AI Literacy & Practical Application",
+      "description": "Understand what AI can and cannot do, use it responsibly, assess outputs and identify practical applications that improve real work.",
+      "category": "AI & Emerging Technology",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "managing-with-ai",
+      "title": "Managing with AI",
+      "description": "Use, supervise and make sound judgements with AI in everyday work.",
+      "category": "AI & Emerging Technology",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Bas Kemme",
+        "Marco van Hurne"
+      ],
+      "audiences": [
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "managing-ai-agents",
+      "title": "Managing AI Agents",
+      "description": "Delegate to, supervise and evaluate artificial agents.",
+      "category": "AI & Emerging Technology",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Dr. Olivier Rikken",
+        "Marco van Hurne"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "building-the-hybrid-human-agent-organisation",
+      "title": "Building the Hybrid Human-Agent Organisation",
+      "description": "Reconsider tasks, processes and roles between people and AI. Address structure, accountability and operating-model implications.",
+      "category": "AI & Emerging Technology",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Dr. Olivier Rikken",
+        "Marco van Hurne",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "leading-ai-transformation-adoption",
+      "title": "Leading AI Transformation & Adoption",
+      "description": "Understand the human and organisational dynamics that determine whether AI is adopted.",
+      "category": "AI & Emerging Technology",
+      "facilitators": [
+        "Bas Kemme",
+        "Marco van Hurne"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "ai-governance-oversight",
+      "title": "AI Governance & Oversight",
+      "description": "Understand the opportunities, responsibilities, risks and oversight choices leaders need to govern AI responsibly.",
+      "category": "AI & Emerging Technology",
+      "facilitators": [
+        "Dr. Olivier Rikken",
+        "Behdad Shahsavari",
+        "Bas Kemme",
+        "Marco van Hurne"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "jobs-to-be-done-as-the-foundation-for-growth",
+      "title": "Jobs to Be Done as the foundation for growth",
+      "description": "Understand the progress customers are trying to make and turn that insight into better customer propositions, communication and innovation opportunities.",
+      "category": "Commercial Excellence",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "pricing",
+      "title": "Pricing",
+      "description": "Strengthen pricing logic using customer value, economics and market behaviour.",
+      "category": "Commercial Excellence",
+      "facilitators": [
+        "Behdad Shahsavari",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "sales-change-understanding-the-four-forces-of-adoption",
+      "title": "Sales & Change: Understanding the Four Forces of Adoption",
+      "description": "Use the four forces that shape leaving the old and embracing the new to get customers or employees buy into your proposition.",
+      "category": "Commercial Excellence",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "building-a-customer-centric-and-sales-oriented-organisation",
+      "title": "Building a customer-centric and sales-oriented organisation",
+      "description": "Translate customer orientation into routines, information and decisions. Make commercial orientation an organisational capability.",
+      "category": "Commercial Excellence",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "adaptability-audit",
+      "title": "Adaptability Audit",
+      "description": "Identify hidden barriers between signal and action and find the leverage point that will increase adaptability.",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Bas Kemme",
+        "Fons Trompenaars",
+        "Behdad Shahsavari"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "bureaucracy-busting",
+      "title": "Bureaucracy Busting",
+      "description": "Design your organisaation for speed and safety, coherence and autonomy, purpose and profit. ",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "culture-as-a-management-system",
+      "title": "Culture as a Management System",
+      "description": "Understand culture and learn to manage it as the enabler of company performance.",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "current-and-desired-culture-change",
+      "title": "Current and Desired Culture Change",
+      "description": "Identify what supports the strategy and what needs to change using a fact-based culture map and pragmatic change interventions.",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "purpose-and-values-for-performance",
+      "title": "Purpose and Values for Performance",
+      "description": "Understand what a purpose-driven organisation means and how to build it with values that direct behaviour needed for successful execution. ",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "tension-to-traction-a-different-thinking-for-breakthrough-performance",
+      "title": "Tension to Traction: A different thinking for breakthrough performance",
+      "description": "Learn to navigate dilemmas by connecting two positive but competing demands rather than settling for compromise. Includes lessons from recent CEO interviews, as captured in the forthcoming book Tension to Traction.",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "leading-change",
+      "title": "Leading Change",
+      "description": "Create meaning and shape the social dynamics that determine adoption.",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Genieke Hertoghs",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "culture-for-m-a-value-creation",
+      "title": "Culture for M&A Value Creation",
+      "description": "Surface differences as a source of deal value by building on the best of both.",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Fons Trompenaars",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "learning-from-netflix-culture",
+      "title": "Learning from Netflix Culture",
+      "description": "Learn about the unique culture of Netflix and lessons for your own organisation.",
+      "category": "Culture, Change & Organisation",
+      "facilitators": [
+        "Carmen Verrier"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "motivation-what-really-drives-people",
+      "title": "Motivation: What Really Drives People",
+      "description": "Understand the fundamental sources of intrinsic motivation and the impact of leadership and management to unleash performance.",
+      "category": "Leadership & Management",
+      "facilitators": [
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "delegation-autonomy-trust-accountability",
+      "title": "Delegation, Autonomy, Trust & Accountability",
+      "description": "Delegate meaningful responsibility and build trust while remaining clear on outcomes, boundaries, standards and accountability.",
+      "category": "Leadership & Management",
+      "facilitators": [
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "performance-conversations",
+      "title": "Performance Conversations",
+      "description": "Hold clear conversations about expectations, performance, development and accountability.",
+      "category": "Leadership & Management",
+      "facilitators": [
+        "Robbert Wolff"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "building-high-performing-teams",
+      "title": "Building High-Performing Teams",
+      "description": "Strengthen trust, belonging, productive debate, cross-functional collaboration, commitment and accountability.",
+      "category": "Teams, Collaboration & Wellbeing",
+      "facilitators": [
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "psychological-safety",
+      "title": "Psychological Safety",
+      "description": "Increase candour, speaking up and learning while maintaining high standards.",
+      "category": "Teams, Collaboration & Wellbeing",
+      "facilitators": [
+        "Sabine de Rooij",
+        "Robbert Wolff"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "sustainable-performance-burnout-prevention",
+      "title": "Sustainable Performance & Burnout Prevention",
+      "description": "Build healthier ways of working that protect energy, performance and accountability.",
+      "category": "Teams, Collaboration & Wellbeing",
+      "facilitators": [
+        "Sabine de Rooij",
+        "Robbert Wolff"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "constructive-conflict-and-dialogue",
+      "title": "Constructive Conflict and Dialogue",
+      "description": "Use disagreement productively without artificial harmony or destructive conflict. Use pull vs. push techniques",
+      "category": "Teams, Collaboration & Wellbeing",
+      "facilitators": [
+        "Genieke Hertoghs",
+        "Marijke Shahsavari-Jansen",
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo",
+        "Boards / Supervisory Boards"
+      ]
+    },
+    {
+      "id": "effective-meetings-decisions-not-theatre",
+      "title": "Effective Meetings: Decisions, Not Theatre",
+      "description": "Design meetings around decisions, ownership and follow-through.",
+      "category": "Teams, Collaboration & Wellbeing",
+      "facilitators": [
+        "Marijke Shahsavari-Jansen",
+        "Bas Kemme",
+        "Robbert Wolff"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "communicating-ideas-that-land",
+      "title": "Communicating Ideas That Land",
+      "description": "Structure messages so others can understand, challenge and act.",
+      "category": "Communication & Influence",
+      "facilitators": [
+        "Marijke Shahsavari-Jansen",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "influencing-stakeholder-management",
+      "title": "Influencing & Stakeholder Management",
+      "description": "Build support without relying solely on formal authority. Use pull vs. push techniques.",
+      "category": "Communication & Influence",
+      "facilitators": [
+        "Genieke Hertoghs",
+        "Marijke Shahsavari-Jansen",
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "giving-receiving-feedback",
+      "title": "Giving & Receiving Feedback",
+      "description": "Make feedback frequent, useful and safe enough to improve performance.",
+      "category": "Communication & Influence",
+      "facilitators": [
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams"
+      ]
+    },
+    {
+      "id": "negotiation-tough-conversations",
+      "title": "Negotiation & Tough Conversations",
+      "description": "Navigate competing interests and trade-offs while protecting relationships.",
+      "category": "Communication & Influence",
+      "facilitators": [
+        "Robbert Wolff",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Managers & Team Leaders",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    },
+    {
+      "id": "the-power-of-humour",
+      "title": "The Power of Humour",
+      "description": "Use humour appropriately to improve relationships, resilience and candour.",
+      "category": "Communication & Influence",
+      "facilitators": [
+        "Pep Rosenfeld",
+        "Bas Kemme"
+      ],
+      "audiences": [
+        "Professionals & Functional Teams",
+        "Management Teams",
+        "Executive Teams / ExCo"
+      ]
+    }
+  ]
+}
