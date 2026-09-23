@@ -87,16 +87,16 @@ if (facilitatorSection && !facilitatorSection.querySelector('.facilitator-profil
 
   const profiles = {
     nl: [
-      ['fons-trompenaars','Fons Trompenaars','Cultuur, dilemma’s & internationaal leiderschap','Internationaal expert in cultuur en leiderschap, met ruim drie decennia ervaring in het begeleiden van leiders en organisaties.','Cultuur & waarden · Dilemma thinking · Global leadership',['culture']],
-      ['bas-kemme','Bas Kemme','Strategie, innovatie & aanpassingsvermogen','Helpt managementteams strategische richting, innovatiekracht en organisatieverandering te verbinden aan concrete performance.','Future-back strategy · Innovation · Culture transformation · Bureaucracy busting',['strategy','ai','culture']],
-      ['behdad-shahsavari','Behdad Shahsavari','AI, strategie & transformatie','Combineert senior ervaring in strategieconsulting, industrie, ventures en digitale transformatie.','AI strategy · Corporate strategy · Digital transformation · Operating models',['strategy','ai']],
-      ['marijke-shahsavari-jansen','Marijke Shahsavari-Jansen','Strategie, samenwerking & stakeholderfacilitatie','Begeleidt leiders en teams bij strategieontwikkeling, samenwerking en complexe vraagstukken met meerdere stakeholders.','Strategy · Collaboration · Stakeholder alignment · Team facilitation',['alignment']],
-      ['niels-janssen','Niels Janssen','Strategie, facilitatie & executive coaching','Coacht al meer dan 15 jaar individuen en teams en combineert dat met senior facilitatie en de hoogste UK-accreditatie als facilitator.','Strategy development · Breakthrough sessions · Executive coaching · Facilitation',['strategy','alignment']],
-      ['genieke-hertoghs','Genieke Hertoghs','Leiderschap, invloed & gedragsverandering','Maakt gedragswetenschap praktisch en helpt leiders draagvlak, eigenaarschap en intrinsieke motivatie versterken.','Behavioural change · Influence · Ownership · Leadership',['culture']],
-      ['robbert-wolff','Robbert Wolff','Leiderschapsvaardigheden & moeilijke gesprekken','Gespecialiseerd in praktische leiderschapsvaardigheden, omgaan met weerstand en het geven en ontvangen van feedback.','Leadership skills · Feedback · Resistance · Difficult conversations',['culture','resilience']],
-      ['sabine-de-rooij','Sabine de Rooij','Werkplekwelzijn, mentale gezondheid & preventie','Bedrijfspsycholoog en coach met ruim 20 jaar ervaring in het creëren van veilige, gezonde werkomgevingen en het voorkomen van langdurige uitval.','Burn-outpreventie · Veerkracht · Psychologische veiligheid · Workplace wellbeing',['resilience']],
-      ['nemos-kostoulas','Nemos Kostoulas','Productinnovatie & digitale ventures','Helpt organisaties ideeën vertalen naar gevalideerde digitale producten en nieuwe ventures, van discovery tot product-market fit.','Product innovation · Digital ventures · Product strategy · Product-market fit',['ai']],
-      ['olivier-rikken','Dr. Olivier Rikken','AI, emerging technology & digitale weerbaarheid','Olivier helpt organisaties zich voorbereiden op de impact van AI, quantum computing, blockchain en andere opkomende technologieën, met bijzondere aandacht voor governance, weerbaarheid en business continuity.','AI strategy · Future tech readiness · Digital resilience · Governance · Business continuity',['ai']]
+      ['fons-trompenaars','Fons Trompenaars','Cultuur, dilemma’s & internationaal leiderschap','Internationaal expert in cultuur en leiderschap, met ruim drie decennia ervaring in het begeleiden van leiders en organisaties.','Cultuur & waarden · Dilemma thinking · Global leadership',['culture-change-organisation']],
+      ['bas-kemme','Bas Kemme','Strategie, innovatie & aanpassingsvermogen','Helpt managementteams strategische richting, innovatiekracht en organisatieverandering te verbinden aan concrete performance.','Future-back strategy · Innovation · Culture transformation · Bureaucracy busting',['strategy-execution','innovation-growth','ai-emerging-technology','commercial-excellence','culture-change-organisation','leadership-management','teams-collaboration-wellbeing','communication-influence']],
+      ['behdad-shahsavari','Behdad Shahsavari','AI, strategie & transformatie','Combineert senior ervaring in strategieconsulting, industrie, ventures en digitale transformatie.','AI strategy · Corporate strategy · Digital transformation · Operating models',['strategy-execution','innovation-growth','ai-emerging-technology','commercial-excellence','culture-change-organisation']],
+      ['marijke-shahsavari-jansen','Marijke Shahsavari-Jansen','Strategie, samenwerking & stakeholderfacilitatie','Begeleidt leiders en teams bij strategieontwikkeling, samenwerking en complexe vraagstukken met meerdere stakeholders.','Strategy · Collaboration · Stakeholder alignment · Team facilitation',['teams-collaboration-wellbeing','communication-influence']],
+      ['niels-janssen','Niels Janssen','Strategie, facilitatie & executive coaching','Coacht al meer dan 15 jaar individuen en teams en combineert dat met senior facilitatie en de hoogste UK-accreditatie als facilitator.','Strategy development · Breakthrough sessions · Executive coaching · Facilitation',['strategy-execution','leadership-management','teams-collaboration-wellbeing','communication-influence']],
+      ['genieke-hertoghs','Genieke Hertoghs','Leiderschap, invloed & gedragsverandering','Maakt gedragswetenschap praktisch en helpt leiders draagvlak, eigenaarschap en intrinsieke motivatie versterken.','Behavioural change · Influence · Ownership · Leadership',['culture-change-organisation','teams-collaboration-wellbeing','communication-influence']],
+      ['robbert-wolff','Robbert Wolff','Leiderschapsvaardigheden & moeilijke gesprekken','Gespecialiseerd in praktische leiderschapsvaardigheden, omgaan met weerstand en het geven en ontvangen van feedback.','Leadership skills · Feedback · Resistance · Difficult conversations',['leadership-management','teams-collaboration-wellbeing','communication-influence']],
+      ['sabine-de-rooij','Sabine de Rooij','Werkplekwelzijn, mentale gezondheid & preventie','Bedrijfspsycholoog en coach met ruim 20 jaar ervaring in het creëren van veilige, gezonde werkomgevingen en het voorkomen van langdurige uitval.','Burn-outpreventie · Veerkracht · Psychologische veiligheid · Workplace wellbeing',['teams-collaboration-wellbeing']],
+      ['nemos-kostoulas','Nemos Kostoulas','Productinnovatie & digitale ventures','Helpt organisaties ideeën vertalen naar gevalideerde digitale producten en nieuwe ventures, van discovery tot product-market fit.','Product innovation · Digital ventures · Product strategy · Product-market fit',['innovation-growth']],
+      ['olivier-rikken','Dr. Olivier Rikken','AI, emerging technology & digitale weerbaarheid','Olivier helpt organisaties zich voorbereiden op de impact van AI, quantum computing, blockchain en andere opkomende technologieën, met bijzondere aandacht voor governance, weerbaarheid en business continuity.','AI strategy · Future tech readiness · Digital resilience · Governance · Business continuity',['ai-emerging-technology']]
     ],
     en: [
       ['fons-trompenaars','Fons Trompenaars','Culture, dilemmas & global leadership','An internationally recognised expert in culture and leadership with more than three decades of experience advising leaders and organisations.','Culture & values · Dilemma thinking · Global leadership',['culture-change-organisation']],
@@ -155,6 +155,29 @@ const capabilityCatalog = document.getElementById('capability-catalog');
 
 if (capabilityCatalog) {
   const catalogUrl = capabilityCatalog.dataset.catalog;
+  const labels = currentLang === 'nl'
+    ? {
+        showAll: 'Toon alles',
+        facilitators: 'Facilitators',
+        allCapabilities: 'Alle capabilities',
+        module: 'module',
+        modules: 'modules',
+        emptyGroup: 'Er zijn nog geen modules beschikbaar in deze groep.',
+        emptyArea: 'Er zijn nog geen modules beschikbaar in dit gebied.',
+        loadError: 'Het capability menu kon niet worden geladen. Ververs de pagina.'
+      }
+    : {
+        showAll: 'Show all',
+        facilitators: 'Facilitators',
+        allCapabilities: 'All capabilities',
+        module: 'module',
+        modules: 'modules',
+        emptyGroup: 'No modules are available in this group yet.',
+        emptyArea: 'No modules are available in this capability area yet.',
+        loadError: 'The capability menu could not be loaded. Please refresh the page.'
+      };
+
+  const moduleCount = count => `${count} ${count === 1 ? labels.module : labels.modules}`;
 
   fetch(catalogUrl, { cache: 'no-store' })
     .then(response => {
@@ -169,13 +192,13 @@ if (capabilityCatalog) {
           <span class="catalog-question-label">${group.question}</span>
           <div class="catalog-category-list">
             ${group.categories.map(category => `<button type="button" class="catalog-category-btn" data-category="${category}">${category}</button>`).join('')}
-            ${group.categories.length > 1 ? `<button type="button" class="catalog-category-btn catalog-group-show-all" data-category="Group:${index}">Show all</button>` : ''}
+            ${group.categories.length > 1 ? `<button type="button" class="catalog-category-btn catalog-group-show-all" data-category="Group:${index}">${labels.showAll}</button>` : ''}
           </div>
         </article>`).join('');
 
       capabilityCatalog.innerHTML = `
         <div class="catalog-show-all-row">
-          <button type="button" class="catalog-category-btn" data-category="All">Show all</button>
+          <button type="button" class="catalog-category-btn" data-category="All">${labels.showAll}</button>
         </div>
         <div class="catalog-question-grid">${questionHtml}</div>
         <div class="catalog-result-head">
@@ -191,7 +214,7 @@ if (capabilityCatalog) {
 
       const moduleCard = module => {
         const facilitators = (module.facilitators || []).length
-          ? `<div class="catalog-facilitators"><strong>Facilitators</strong> ${module.facilitators.join(' · ')}</div>`
+          ? `<div class="catalog-facilitators"><strong>${labels.facilitators}</strong> ${module.facilitators.join(' · ')}</div>`
           : '';
         return `<article class="catalog-module"><h4>${module.title}</h4><p>${module.description}</p>${facilitators}</article>`;
       };
@@ -202,15 +225,15 @@ if (capabilityCatalog) {
           const group = matches.filter(module => module.category === category);
           if (!group.length) return '';
           return `<section class="catalog-all-group"><h4 class="catalog-all-group-title">${category}</h4><div class="catalog-all-grid">${group.map(moduleCard).join('')}</div></section>`;
-        }).join('') || '<div class="catalog-empty">No modules are available in this group yet.</div>';
+        }).join('') || `<div class="catalog-empty">${labels.emptyGroup}</div>`;
       }
 
       function render() {
         categoryButtons.forEach(button => button.classList.toggle('is-active', button.dataset.category === selectedCategory));
 
         if (selectedCategory === 'All') {
-          resultTitle.textContent = 'All capabilities';
-          count.textContent = `${catalog.modules.length} modules`;
+          resultTitle.textContent = labels.allCapabilities;
+          count.textContent = moduleCount(catalog.modules.length);
           renderGroups(catalog.categories, catalog.modules);
           return;
         }
@@ -220,18 +243,18 @@ if (capabilityCatalog) {
           const questionGroup = catalog.questions[groupIndex];
           const matches = catalog.modules.filter(module => questionGroup.categories.includes(module.category));
           resultTitle.textContent = questionGroup.question;
-          count.textContent = `${matches.length} module${matches.length === 1 ? '' : 's'}`;
+          count.textContent = moduleCount(matches.length);
           renderGroups(questionGroup.categories, matches);
           return;
         }
 
         const matches = catalog.modules.filter(module => module.category === selectedCategory);
         resultTitle.textContent = selectedCategory;
-        count.textContent = `${matches.length} module${matches.length === 1 ? '' : 's'}`;
+        count.textContent = moduleCount(matches.length);
         modulesEl.classList.remove('show-all');
         modulesEl.innerHTML = matches.length
           ? matches.map(moduleCard).join('')
-          : '<div class="catalog-empty">No modules are available in this capability area yet.</div>';
+          : `<div class="catalog-empty">${labels.emptyArea}</div>`;
       }
 
       categoryButtons.forEach(button => {
@@ -245,7 +268,7 @@ if (capabilityCatalog) {
     })
     .catch(error => {
       console.error(error);
-      capabilityCatalog.innerHTML = '<p class="catalog-loading">The capability menu could not be loaded. Please refresh the page.</p>';
+      capabilityCatalog.innerHTML = `<p class="catalog-loading">${labels.loadError}</p>`;
     });
 }
 
