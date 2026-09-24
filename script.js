@@ -13,31 +13,37 @@ if (mainNav && !mainNav.querySelector('.lang-switch')) {
   langSwitch.style.fontSize = '0.78rem';
   langSwitch.style.letterSpacing = '0.08em';
 
-  const makeLangLink = (href, label, flag, lang) => {
+  const makeLangLink = (href, label, flagSrc, lang) => {
     const link = document.createElement('a');
     link.href = href;
     link.setAttribute('lang', lang);
     link.style.display = 'inline-flex';
     link.style.flexDirection = 'column';
     link.style.alignItems = 'center';
-    link.style.gap = '1px';
+    link.style.gap = '3px';
     link.style.lineHeight = '1.05';
     link.style.textDecoration = 'none';
 
     const labelEl = document.createElement('span');
     labelEl.textContent = label;
 
-    const flagEl = document.createElement('span');
-    flagEl.textContent = flag;
+    const flagEl = document.createElement('img');
+    flagEl.src = flagSrc;
+    flagEl.alt = '';
     flagEl.setAttribute('aria-hidden', 'true');
-    flagEl.style.fontSize = '0.95rem';
-    flagEl.style.lineHeight = '1';
+    flagEl.width = 18;
+    flagEl.height = 18;
+    flagEl.style.width = '18px';
+    flagEl.style.height = '18px';
+    flagEl.style.objectFit = 'cover';
+    flagEl.style.borderRadius = '50%';
+    flagEl.style.display = 'block';
 
     link.append(labelEl, flagEl);
     return link;
   };
 
-  const nlLink = makeLangLink('/nl/', 'NL', '🇳🇱', 'nl');
+  const nlLink = makeLangLink('/nl/', 'NL', '/assets/images/flag-nl.png', 'nl');
 
   const separator = document.createElement('span');
   separator.textContent = '/';
@@ -46,7 +52,7 @@ if (mainNav && !mainNav.querySelector('.lang-switch')) {
   separator.style.alignSelf = 'flex-start';
   separator.style.marginTop = '0.05rem';
 
-  const enLink = makeLangLink('/', 'EN', '🇬🇧', 'en');
+  const enLink = makeLangLink('/', 'EN', '/assets/images/flag-uk.png', 'en');
 
   const activeLink = currentLang === 'en' ? enLink : nlLink;
   const inactiveLink = currentLang === 'en' ? nlLink : enLink;
