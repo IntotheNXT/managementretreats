@@ -79,7 +79,7 @@ const facilitatorSection = document.getElementById('facilitators');
 if (facilitatorSection && !document.querySelector('link[data-facilitator-styles]')) {
   const facilitatorStyles = document.createElement('link');
   facilitatorStyles.rel = 'stylesheet';
-  facilitatorStyles.href = currentLang === 'en' ? '../facilitators.css' : 'facilitators.css';
+  facilitatorStyles.href = currentLang === 'en' ? 'facilitators.css' : '../facilitators.css';
   facilitatorStyles.dataset.facilitatorStyles = 'true';
   document.head.appendChild(facilitatorStyles);
 }
