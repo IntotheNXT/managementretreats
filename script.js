@@ -13,20 +13,40 @@ if (mainNav && !mainNav.querySelector('.lang-switch')) {
   langSwitch.style.fontSize = '0.78rem';
   langSwitch.style.letterSpacing = '0.08em';
 
-  const nlLink = document.createElement('a');
-  nlLink.href = currentLang === 'en' ? '../' : './';
-  nlLink.textContent = 'NL';
-  nlLink.setAttribute('lang', 'nl');
+  const makeLangLink = (href, label, flag, lang) => {
+    const link = document.createElement('a');
+    link.href = href;
+    link.setAttribute('lang', lang);
+    link.style.display = 'inline-flex';
+    link.style.flexDirection = 'column';
+    link.style.alignItems = 'center';
+    link.style.gap = '1px';
+    link.style.lineHeight = '1.05';
+    link.style.textDecoration = 'none';
+
+    const labelEl = document.createElement('span');
+    labelEl.textContent = label;
+
+    const flagEl = document.createElement('span');
+    flagEl.textContent = flag;
+    flagEl.setAttribute('aria-hidden', 'true');
+    flagEl.style.fontSize = '0.95rem';
+    flagEl.style.lineHeight = '1';
+
+    link.append(labelEl, flagEl);
+    return link;
+  };
+
+  const nlLink = makeLangLink('/nl/', 'NL', '🇳🇱', 'nl');
 
   const separator = document.createElement('span');
   separator.textContent = '/';
   separator.setAttribute('aria-hidden', 'true');
   separator.style.opacity = '0.4';
+  separator.style.alignSelf = 'flex-start';
+  separator.style.marginTop = '0.05rem';
 
-  const enLink = document.createElement('a');
-  enLink.href = currentLang === 'en' ? './' : 'en/';
-  enLink.textContent = 'EN';
-  enLink.setAttribute('lang', 'en');
+  const enLink = makeLangLink('/', 'EN', '🇬🇧', 'en');
 
   const activeLink = currentLang === 'en' ? enLink : nlLink;
   const inactiveLink = currentLang === 'en' ? nlLink : enLink;
