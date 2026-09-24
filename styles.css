@@ -296,8 +296,8 @@ h3 { font-size: 22px; line-height: 1.2; }
   color: white;
 }
 
-.retreat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.retreat-card {
+.offsite-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.offsite-card {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -307,15 +307,15 @@ h3 { font-size: 22px; line-height: 1.2; }
   flex-direction: column;
   transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
 }
-.retreat-card:hover {
+.offsite-card:hover {
   background: var(--sage);
   transform: translateY(-3px);
   box-shadow: 0 16px 34px rgba(28, 34, 28, 0.08);
 }
 .card-label { font-size: 11px; letter-spacing: .12em; font-weight: 700; color: var(--olive); }
-.retreat-card h3 { margin-top: 38px; font-family: "DM Serif Display", serif; font-size: 32px; }
-.retreat-card p { color: var(--muted); margin-top: 13px; }
-.compact-retreats .retreat-card { min-height: 230px; }
+.offsite-card h3 { margin-top: 38px; font-family: "DM Serif Display", serif; font-size: 32px; }
+.offsite-card p { color: var(--muted); margin-top: 13px; }
+.compact-offsites .offsite-card { min-height: 230px; }
 .section-cta { margin-top: 28px; }
 
 .alternative-tags { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -375,7 +375,7 @@ h3 { font-size: 22px; line-height: 1.2; }
 
 @media (max-width: 1000px) {
   .hero-grid, .split-head, .facilitator-grid, .academy-grid, .final-cta-grid { grid-template-columns: 1fr; gap: 40px; }
-  .retreat-grid, .location-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .offsite-grid, .location-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
   .main-nav { gap: 18px; }
   .main-nav > a:not(.btn) { display: none; }
 }
@@ -406,7 +406,7 @@ h3 { font-size: 22px; line-height: 1.2; }
   }
   .main-nav.is-open { display: flex; }
   .main-nav > a:not(.btn) { display: block; padding: 8px 0; }
-  .topic-grid, .retreat-grid, .location-grid, .process-grid { grid-template-columns: 1fr; }
+  .topic-grid, .offsite-grid, .location-grid, .process-grid { grid-template-columns: 1fr; }
   .catalog-question-grid, .catalog-modules, .catalog-all-grid { grid-template-columns: 1fr; }
   .catalog-result-head { align-items: flex-start; flex-direction: column; gap: 5px; }
   .catalog-show-all-row { justify-content: stretch; }
