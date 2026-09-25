@@ -367,6 +367,9 @@ h3 { font-size: 22px; line-height: 1.2; }
 
 .locations-section { background: #ebe6db; }
 .compact-locations { padding-top: 82px; padding-bottom: 82px; }
+.location-intro { align-self: end; }
+.location-intro p { margin: 0; color: var(--muted); font-size: 17px; }
+.location-intro .btn { margin-top: 20px; }
 .location-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .location-card { background: var(--paper); border-radius: 24px; overflow: hidden; border: 1px solid #d6cfc2; box-shadow: 0 18px 42px rgba(38,35,30,.06); }
 .location-visual { aspect-ratio: 1.55 / 1; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden; background: #cfc9bc; }
