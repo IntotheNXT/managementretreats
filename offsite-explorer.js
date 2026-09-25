@@ -67,6 +67,7 @@
       },
       reviewIntro: 'Lees de samenvatting voordat de Verkenner het voorstel samenstelt.',
       reviewLabels: { occasion: 'Aanleiding', outcomes: 'Gewenste uitkomst', themes: 'Onderwerp', blockers: 'Belemmeringen', participants: 'Deelnemers', format: 'Format', practical: 'Praktisch', followup: 'Verdieping' },
+      edit: 'Wijzig', adjustAnswers: 'Antwoorden aanpassen',
       confirmation: 'Deze samenvatting geeft onze vraag voldoende goed weer.',
       resultKicker: 'Eerste inhoudelijke richting',
       resultTitle: outcome => `${outcome}: een eerste opzet voor jullie offsite`,
@@ -151,6 +152,7 @@
       },
       reviewIntro: 'Read the summary before the Explorer composes the proposal.',
       reviewLabels: { occasion: 'Occasion', outcomes: 'Desired outcome', themes: 'Topic', blockers: 'Barriers', participants: 'Participants', format: 'Format', practical: 'Practical', followup: 'Further context' },
+      edit: 'Edit', adjustAnswers: 'Adjust answers',
       confirmation: 'This summary reflects our question sufficiently well.',
       resultKicker: 'Initial content direction',
       resultTitle: outcome => `${outcome}: an initial direction for your offsite`,
@@ -191,6 +193,29 @@
     'stakeholder-alignment', 'productive-dialogue', 'psychological-safety', 'sustainable-performance',
     'clear-accountability', 'improved-communication', 'difficult-conversations', 'effective-meetings',
     'integration-after-merger', 'motivation-engagement'
+  ];
+
+  const outcomeGroups = [
+    {
+      label: { nl: 'Richting en strategie', en: 'Direction and strategy' },
+      ids: ['shared-direction', 'clear-strategic-choices', 'future-readiness']
+    },
+    {
+      label: { nl: 'Uitvoering en besluitvorming', en: 'Execution and decision-making' },
+      ids: ['prioritised-action-plan', 'faster-better-decisions', 'stronger-execution', 'adaptive-operating-model', 'clear-accountability', 'effective-meetings']
+    },
+    {
+      label: { nl: 'Groei, innovatie en AI', en: 'Growth, innovation and AI' },
+      ids: ['innovation-opportunities', 'validated-options', 'balanced-growth-portfolio', 'responsible-ai-use', 'human-ai-work-design', 'ai-adoption-plan', 'customer-value-clarity', 'commercial-decisions']
+    },
+    {
+      label: { nl: 'Cultuur en leiderschap', en: 'Culture and leadership' },
+      ids: ['culture-change-agenda', 'lived-values-behaviours', 'organisational-adaptability', 'leadership-practice', 'sustainable-performance', 'motivation-engagement']
+    },
+    {
+      label: { nl: 'Samenwerking en alignment', en: 'Teamwork and alignment' },
+      ids: ['stronger-team-dynamics', 'stakeholder-alignment', 'productive-dialogue', 'psychological-safety', 'improved-communication', 'difficult-conversations', 'integration-after-merger']
+    }
   ];
 
   const blockerIdsByTheme = {
@@ -320,9 +345,18 @@
   }
 
   function renderOutcomes() {
-    const options = outcomeIds.map(id => ({ id, label: byId(data.matching.vocabulary.outcomes, id)?.[lang] || id }));
+    const groups = outcomeGroups.map((group, index) => ({
+      ...group,
+      options: group.ids.map(id => ({ id, label: byId(data.matching.vocabulary.outcomes, id)?.[lang] || id })),
+      headingId: `outcome-group-${index}`
+    }));
     return questionShell('outcomes', `
-      <div class="choice-grid">${choiceMarkup('outcomes', options, state.outcomes)}</div>
+      <div class="choice-groups">${groups.map(group => `
+        <section class="choice-group" role="group" aria-labelledby="${group.headingId}">
+          <h3 class="choice-group-title" id="${group.headingId}">${escapeHtml(group.label[lang])}</h3>
+          <div class="choice-grid">${choiceMarkup('outcomes', group.options, state.outcomes)}</div>
+        </section>`).join('')}
+      </div>
       <p class="selection-count" id="selection-count">${copy.selected(state.outcomes.length, 3)}</p>`);
   }
 
@@ -425,7 +459,9 @@
           showError(copy.maxSelected(maximum));
           return;
         }
+        const previousFollowup = getFollowup();
         state[field.name] = selected;
+        if (['themes', 'blockers'].includes(field.name) && getFollowup() !== previousFollowup) state.followup = '';
         const counter = document.getElementById('selection-count');
         if (counter) counter.textContent = copy.selected(selected.length, maximum);
         clearError();
@@ -483,7 +519,7 @@
       participants: `${copy.audiences[state.audience]} · ${state.size} · ${copy.languages[state.language]}`,
       format: copy.formats[state.format]?.[0] || state.format,
       practical,
-      followup: state.followup
+      followup: getFollowup() ? state.followup : ''
     };
   }
 
@@ -493,7 +529,7 @@
     const summary = answerSummary();
     const rows = Object.entries(summary)
       .filter(([, value]) => value)
-      .map(([key, value]) => `<div class="review-row"><dt>${escapeHtml(copy.reviewLabels[key])}</dt><dd>${escapeHtml(value)}</dd></div>`)
+      .map(([key, value]) => `<div class="review-row"><dt>${escapeHtml(copy.reviewLabels[key])}</dt><dd>${escapeHtml(value)}</dd><button class="review-edit" type="button" data-edit-step="${escapeHtml(key)}">${copy.edit}</button></div>`)
       .join('');
     content.innerHTML = `
       <div class="review-view">
@@ -510,6 +546,14 @@
     const confirm = document.getElementById('confirm-summary');
     const create = content.querySelector('[data-action="create"]');
     confirm.addEventListener('change', () => { create.disabled = !confirm.checked; });
+    content.querySelectorAll('[data-edit-step]').forEach(button => {
+      button.addEventListener('click', () => {
+        const targetIndex = getFlow().indexOf(button.dataset.editStep);
+        if (targetIndex < 0) return;
+        flowIndex = targetIndex;
+        renderQuestion();
+      });
+    });
     content.querySelector('[data-action="back"]').addEventListener('click', () => {
       flowIndex = getFlow().length - 1;
       renderQuestion();
@@ -670,12 +714,14 @@
         <section class="proposal-section"><h2>${copy.refine}</h2><p>${copy.refineText}</p></section>
         <div class="proposal-actions">
           <a class="explorer-button" href="${mailto}">${copy.discuss}</a>
+          <button class="explorer-button explorer-button--secondary" type="button" data-action="adjust">${copy.adjustAnswers}</button>
           <button class="explorer-button explorer-button--secondary" type="button" data-action="copy">${copy.copyProposal}</button>
           <button class="explorer-button explorer-button--secondary" type="button" data-action="print">${copy.printProposal}</button>
           <button class="explorer-button explorer-button--secondary" type="button" data-action="restart">${copy.startOver}</button>
           <span class="copy-status" id="copy-status" aria-live="polite"></span>
         </div>
       </article>`;
+    content.querySelector('[data-action="adjust"]').addEventListener('click', renderReview);
     content.querySelector('[data-action="copy"]').addEventListener('click', copyResult);
     content.querySelector('[data-action="print"]').addEventListener('click', () => window.print());
     content.querySelector('[data-action="restart"]').addEventListener('click', restart);

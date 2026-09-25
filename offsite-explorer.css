@@ -221,6 +221,19 @@
 
 .choice-grid.choice-grid--single { grid-template-columns: 1fr; }
 
+.choice-groups {
+  display: grid;
+  gap: 27px;
+}
+
+.choice-group-title {
+  color: var(--olive);
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.choice-group .choice-grid { margin-top: 10px; }
+
 .choice-item {
   position: relative;
   display: flex;
@@ -308,14 +321,30 @@
 
 .review-row {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 150px 1fr auto;
   gap: 20px;
+  align-items: start;
   padding: 15px 0;
   border-bottom: 1px solid var(--line);
 }
 
 .review-row dt { color: var(--muted); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
 .review-row dd { margin: 0; font-size: 14px; font-weight: 600; }
+
+.review-edit {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: var(--olive);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.review-edit:hover { color: var(--ink); }
 
 .confirmation {
   display: flex;
