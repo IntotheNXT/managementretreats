@@ -28,6 +28,17 @@ const formatScore = {
   'not-suitable': 0
 };
 
+const intakeThemes = {
+  'strategy-execution': { category: 'Strategy & Execution', aliases: ['strategy-sharp-choices', 'faster-decision-making'] },
+  'innovation-growth': { category: 'Innovation & Growth', aliases: ['growth-innovation'] },
+  'ai-emerging-technology': { category: 'AI & Emerging Technology', aliases: ['ai-impact-work'] },
+  'commercial-excellence': { category: 'Commercial Excellence', aliases: [] },
+  'culture-change-organisation': { category: 'Culture, Change & Organisation', aliases: ['culture-collaboration'] },
+  'leadership-management': { category: 'Leadership & Management', aliases: ['leadership'] },
+  'teams-collaboration-wellbeing': { category: 'Teams, Collaboration & Wellbeing', aliases: ['team-development', 'burnout-resilience'] },
+  'communication-influence': { category: 'Communication & Influence', aliases: ['dilemmas-tensions'] }
+};
+
 function overlap(values = [], requested = []) {
   const available = new Set(values);
   return requested.filter(value => available.has(value));
@@ -60,12 +71,18 @@ function scoreModule(metadata, academyModule, facilitatorData, scenario) {
   const facilitators = resolveFacilitators(academyModule, facilitatorData, scenario);
   if (!facilitators.length) return null;
 
-  const primaryThemeScore = proportionalScore(metadata.primaryThemes, scenario.themes, 25);
-  const unmatchedThemes = scenario.themes.filter(theme => !metadata.primaryThemes.includes(theme));
+  const selectedThemeCategories = scenario.themes.filter(theme => theme !== 'other');
+  const requestedThemes = selectedThemeCategories.flatMap(theme => intakeThemes[theme]?.aliases || []);
+  const requestedOutcomes = scenario.outcomes.filter(outcome => outcome !== 'other');
+  const requestedBlockers = scenario.blockers.filter(blocker => blocker !== 'other');
+  const moduleCategory = selectedThemeCategories.find(theme => intakeThemes[theme]?.category === academyModule.category);
+  const categoryMatched = Boolean(moduleCategory);
+  const primaryThemeScore = proportionalScore(metadata.primaryThemes, requestedThemes, 25);
+  const unmatchedThemes = requestedThemes.filter(theme => !metadata.primaryThemes.includes(theme));
   const secondaryThemeScore = proportionalScore(metadata.secondaryThemes, unmatchedThemes, 12.5);
-  const themeScore = Math.min(25, primaryThemeScore + secondaryThemeScore);
-  const outcomeScore = proportionalScore(metadata.outcomes, scenario.outcomes, 30);
-  const blockerScore = proportionalScore(metadata.blockers, scenario.blockers, 20);
+  const themeScore = categoryMatched ? 25 : Math.min(25, primaryThemeScore + secondaryThemeScore);
+  const outcomeScore = proportionalScore(metadata.outcomes, requestedOutcomes, 30);
+  const blockerScore = proportionalScore(metadata.blockers, requestedBlockers, 20);
   const audienceScore = 15;
   const durationScore = formatScore[fit];
 
@@ -80,9 +97,9 @@ function scoreModule(metadata, academyModule, facilitatorData, scenario) {
       audience: audienceScore,
       format: durationScore
     },
-    matchedOutcomes: overlap(metadata.outcomes, scenario.outcomes),
-    matchedBlockers: overlap(metadata.blockers, scenario.blockers),
-    matchedThemes: overlap([...metadata.primaryThemes, ...metadata.secondaryThemes], scenario.themes),
+    matchedOutcomes: overlap(metadata.outcomes, requestedOutcomes),
+    matchedBlockers: overlap(metadata.blockers, requestedBlockers),
+    matchedThemes: categoryMatched ? [moduleCategory] : overlap([...metadata.primaryThemes, ...metadata.secondaryThemes], requestedThemes),
     primaryThemes: metadata.primaryThemes,
     proposalRoles: metadata.proposalRoles,
     formatFit: fit,

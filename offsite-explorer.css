@@ -234,6 +234,21 @@
 
 .choice-group .choice-grid { margin-top: 10px; }
 
+.other-choice { margin-top: 10px; }
+.choice-groups + .other-choice { margin-top: 27px; }
+
+.other-field {
+  display: none;
+  margin-top: 10px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #f6f2ea;
+}
+
+.other-field.is-visible { display: block; }
+.other-field .field-label { margin-bottom: 10px; }
+
 .choice-item {
   position: relative;
   display: flex;

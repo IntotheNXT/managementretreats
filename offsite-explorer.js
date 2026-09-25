@@ -16,6 +16,7 @@
       question: 'Vraag', of: 'van', followup: 'Eén korte vervolgvraag', review: 'Controleer jullie antwoorden', proposal: 'Jullie eerste voorstel',
       next: 'Volgende', back: 'Terug', reviewButton: 'Bekijk samenvatting', create: 'Dit klopt, maak het voorstel',
       required: 'Beantwoord deze vraag om verder te gaan.', chooseAtLeast: 'Kies minimaal één optie.',
+      other: 'Anders, namelijk…', otherLabel: 'Anders', otherPrompt: 'Omschrijf kort wat je bedoelt', otherRequired: 'Vul kort in wat je met “Anders” bedoelt.',
       maxSelected: maximum => `Kies maximaal ${maximum} opties.`, selected: (count, maximum) => `${count} van maximaal ${maximum} gekozen`,
       loadingErrorTitle: 'De Verkenner kon niet worden geladen', loadingError: 'Probeer de pagina opnieuw te laden. Als het probleem blijft bestaan, neem dan rechtstreeks contact met ons op.',
       occasion: {
@@ -75,7 +76,7 @@
       coreModule: 'Kernmodule', supportingModule: 'Aanvullende module', programme: 'Indicatieve opbouw',
       facilitation: 'Mogelijke begeleiding', assumptions: 'Aannames en open vragen', refine: 'Samen aanscherpen',
       disclaimer: 'Dit is een eerste inhoudelijke richting op basis van jullie antwoorden. Het is nog geen definitief programma, offerte of bevestiging van beschikbaarheid.',
-      context: ({ occasion, audience, size, outcomes }) => `${occasion} De offsite is bedoeld voor een ${audience.toLowerCase()} van circa ${size} deelnemers. Aan het einde willen jullie vooral bereiken: ${outcomes}.`,
+      context: ({ occasion, audience, size, outcomes, themes, blockers }) => `${occasion} De offsite is bedoeld voor een ${audience.toLowerCase()} van circa ${size} deelnemers. Aan het einde willen jullie vooral bereiken: ${outcomes}. De gekozen inhoudelijke focus is ${themes.toLowerCase()}; de belangrijkste belemmeringen zijn ${blockers.toLowerCase()}.`,
       recommendation: ({ module, outcomes }) => `Gebruik de beschikbare tijd om met ${module} gericht te werken aan ${outcomes}. Het programma begint bij de eigen context en eindigt met expliciete keuzes, eigenaarschap en concrete vervolgstappen.`,
       moduleContribution: (description, role) => `${description} ${role === 'core' ? 'Dit vormt de inhoudelijke ruggengraat van de offsite.' : 'Dit vult de kernmodule aan waar een tweede perspectief nodig is.'}`,
       facilitatorFit: ({ name, language }) => `${name} kan de voorgestelde inhoud begeleiden, heeft ervaring met dit type team en kan in het ${language} werken. Beschikbaarheid wordt persoonlijk bevestigd.`,
@@ -95,12 +96,14 @@
       emailProposal: 'VOLLEDIG VOORSTEL', emailIntake: 'INGEVULDE INTAKE',
       noMatchTitle: 'Deze vraag vraagt om persoonlijk overleg',
       noMatchText: 'De combinatie van onderwerp, doelgroep, taal en format levert nog geen verantwoorde match op. We stellen daarom liever geen generiek programma voor.',
+      noMatchEmailIntro: 'Hallo,\n\nWe hebben de Offsite Verkenner ingevuld en willen onze vraag graag persoonlijk bespreken.',
       directContact: 'Neem direct contact op'
     },
     en: {
       question: 'Question', of: 'of', followup: 'One short follow-up', review: 'Check your answers', proposal: 'Your initial proposal',
       next: 'Next', back: 'Back', reviewButton: 'Review summary', create: 'This is accurate, create the proposal',
       required: 'Answer this question to continue.', chooseAtLeast: 'Choose at least one option.',
+      other: 'Other, namely…', otherLabel: 'Other', otherPrompt: 'Briefly describe what you mean', otherRequired: 'Briefly explain what you mean by “Other”.',
       maxSelected: maximum => `Choose no more than ${maximum} options.`, selected: (count, maximum) => `${count} of ${maximum} selected`,
       loadingErrorTitle: 'The Explorer could not be loaded', loadingError: 'Please reload the page. If the problem persists, contact us directly.',
       occasion: {
@@ -160,7 +163,7 @@
       coreModule: 'Core module', supportingModule: 'Supporting module', programme: 'Indicative structure',
       facilitation: 'Possible facilitation', assumptions: 'Assumptions and open questions', refine: 'Refine it together',
       disclaimer: 'This is an initial direction based on your answers. It is not yet a final programme, quotation or confirmation of availability.',
-      context: ({ occasion, audience, size, outcomes }) => `${occasion} The offsite is intended for ${audience.toLowerCase()}, with around ${size} participants. At the end, you primarily want to achieve: ${outcomes}.`,
+      context: ({ occasion, audience, size, outcomes, themes, blockers }) => `${occasion} The offsite is intended for ${audience.toLowerCase()}, with around ${size} participants. At the end, you primarily want to achieve: ${outcomes}. The selected content focus is ${themes.toLowerCase()}; the main barriers are ${blockers.toLowerCase()}.`,
       recommendation: ({ module, outcomes }) => `Use the available time to work with ${module} on ${outcomes}. The programme starts with your own context and ends with explicit choices, ownership and concrete next steps.`,
       moduleContribution: (description, role) => `${description} ${role === 'core' ? 'This forms the content backbone of the offsite.' : 'This complements the core module where a second perspective is useful.'}`,
       facilitatorFit: ({ name, language }) => `${name} can facilitate the proposed content, has experience with this type of team and can work in ${language}. Availability will be confirmed personally.`,
@@ -180,6 +183,7 @@
       emailProposal: 'FULL PROPOSAL', emailIntake: 'COMPLETED INTAKE',
       noMatchTitle: 'This question needs a personal conversation',
       noMatchText: 'The combination of topic, audience, language and format does not yet produce a responsible match. We would rather not suggest a generic programme.',
+      noMatchEmailIntro: 'Hello,\n\nWe completed the Offsite Explorer and would like to discuss our question personally.',
       directContact: 'Contact us directly'
     }
   }[lang];
@@ -218,6 +222,22 @@
     }
   ];
 
+  const intakeThemeOptions = [
+    { id: 'strategy-execution', nl: 'Strategie & Executie', en: 'Strategy & Execution', aliases: ['strategy-sharp-choices', 'faster-decision-making'] },
+    { id: 'innovation-growth', nl: 'Innovatie & Groei', en: 'Innovation & Growth', aliases: ['growth-innovation'] },
+    { id: 'ai-emerging-technology', nl: 'AI & Opkomende Technologie', en: 'AI & Emerging Technology', aliases: ['ai-impact-work'] },
+    { id: 'commercial-excellence', nl: 'Commerciële Excellentie', en: 'Commercial Excellence', aliases: [] },
+    { id: 'culture-change-organisation', nl: 'Cultuur, Verandering & Organisatie', en: 'Culture, Change & Organisation', aliases: ['culture-collaboration'] },
+    { id: 'leadership-management', nl: 'Leiderschap & Management', en: 'Leadership & Management', aliases: ['leadership'] },
+    { id: 'teams-collaboration-wellbeing', nl: 'Teams, Samenwerking & Welzijn', en: 'Teams, Collaboration & Wellbeing', aliases: ['team-development', 'burnout-resilience'] },
+    { id: 'communication-influence', nl: 'Communicatie & Invloed', en: 'Communication & Influence', aliases: ['dilemmas-tensions'] }
+  ];
+
+  const extraBlockerIdsByIntakeTheme = {
+    'commercial-excellence': ['weak-customer-insight', 'inside-out-commercial-thinking', 'weak-stakeholder-support', 'untested-assumptions', 'siloed-thinking'],
+    'communication-influence': ['messages-do-not-land', 'weak-stakeholder-support', 'feedback-avoidance']
+  };
+
   const blockerIdsByTheme = {
     'strategy-sharp-choices': ['unclear-direction', 'too-many-priorities', 'short-term-bias', 'weak-follow-through', 'slow-decisions', 'rigid-planning-budgeting'],
     'ai-impact-work': ['low-ai-literacy', 'unclear-ai-accountability', 'resistance-to-ai', 'weak-governance', 'siloed-thinking'],
@@ -232,6 +252,7 @@
 
   const state = {
     occasion: '', outcomes: [], themes: [], blockers: [], audience: '', size: 8,
+    outcomeOther: '', themeOther: '', blockerOther: '',
     language: lang, format: '', timing: '', location: '', notes: '', followup: ''
   };
 
@@ -246,32 +267,41 @@
     .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 
   const byId = (items, id) => items.find(item => item.id === id);
-  const labelsFor = (kind, ids) => ids.map(id => byId(data.matching.vocabulary[kind], id)?.[lang] || id);
+  const otherStateKeys = { themes: 'themeOther', blockers: 'blockerOther', outcomes: 'outcomeOther' };
+  const labelsFor = (kind, ids) => ids.map(id => {
+    if (id === 'other') return `${copy.otherLabel}: ${state[otherStateKeys[kind]].trim()}`;
+    if (kind === 'themes') return byId(intakeThemeOptions, id)?.[lang] || id;
+    return byId(data.matching.vocabulary[kind], id)?.[lang] || id;
+  });
   const joinLabels = values => values.join(lang === 'nl' ? ', ' : ', ');
 
+  const structuredSelections = kind => state[kind].filter(id => id !== 'other');
+  const expandedThemes = () => structuredSelections('themes')
+    .flatMap(id => byId(intakeThemeOptions, id)?.aliases || []);
+
   function getFollowup() {
-    const has = id => state.blockers.includes(id) || state.themes.includes(id);
-    if (has('conflict-avoidance') || has('unproductive-conflict') || has('avoided-tensions')) {
+    const hasBlocker = id => state.blockers.includes(id);
+    if (hasBlocker('conflict-avoidance') || hasBlocker('unproductive-conflict') || hasBlocker('avoided-tensions')) {
       return lang === 'nl'
         ? 'Wat is op dit moment het moeilijkst om open met elkaar te bespreken?'
         : 'What is currently most difficult to discuss openly with each other?';
     }
-    if (has('strategy-sharp-choices')) {
+    if (state.themes.includes('strategy-execution')) {
       return lang === 'nl'
         ? 'Welke keuze of prioriteit moet na deze offsite echt duidelijker zijn?'
         : 'Which choice or priority must be clearer after this offsite?';
     }
-    if (has('ai-impact-work')) {
+    if (state.themes.includes('ai-emerging-technology')) {
       return lang === 'nl'
         ? 'Waar moet AI de komende twaalf maanden het grootste verschil maken?'
         : 'Where should AI make the biggest difference over the next twelve months?';
     }
-    if (has('growth-innovation')) {
+    if (state.themes.includes('innovation-growth')) {
       return lang === 'nl'
         ? 'Welke groeikans of aanname moet het team het meest kritisch toetsen?'
         : 'Which growth opportunity or assumption does the team most need to test critically?';
     }
-    if (has('burnout-resilience')) {
+    if (hasBlocker('chronic-overload') || hasBlocker('low-energy-recovery')) {
       return lang === 'nl'
         ? 'Welke druk of gewoonte maakt de huidige manier van presteren niet duurzaam?'
         : 'Which pressure or habit makes the current way of performing unsustainable?';
@@ -340,6 +370,22 @@
     }).join('');
   }
 
+  function otherChoiceMarkup(name) {
+    const stateKey = otherStateKeys[name];
+    const selected = state[name].includes('other');
+    const fieldId = `${name}-other-field`;
+    return `<div class="other-choice">
+      <label class="choice-item">
+        <input type="checkbox" name="${name}" value="other" data-other-toggle="${stateKey}" aria-controls="${fieldId}" aria-expanded="${selected}" ${selected ? 'checked' : ''}>
+        <span>${copy.other}</span>
+      </label>
+      <label class="other-field${selected ? ' is-visible' : ''}" id="${fieldId}" data-other-field="${stateKey}">
+        <span class="field-label">${copy.otherPrompt}</span>
+        <input class="explorer-input" type="text" maxlength="180" data-state="${stateKey}" value="${escapeHtml(state[stateKey])}">
+      </label>
+    </div>`;
+  }
+
   function renderOccasion() {
     return questionShell('occasion', `<textarea class="explorer-textarea" data-state="occasion" maxlength="700" placeholder="${escapeHtml(copy.occasion.placeholder)}">${escapeHtml(state.occasion)}</textarea>`);
   }
@@ -357,28 +403,35 @@
           <div class="choice-grid">${choiceMarkup('outcomes', group.options, state.outcomes)}</div>
         </section>`).join('')}
       </div>
+      ${otherChoiceMarkup('outcomes')}
       <p class="selection-count" id="selection-count">${copy.selected(state.outcomes.length, 3)}</p>`);
   }
 
   function renderThemes() {
-    const options = data.matching.vocabulary.themes.map(item => ({ id: item.id, label: item[lang] }));
+    const options = intakeThemeOptions.map(item => ({ id: item.id, label: item[lang] }));
     return questionShell('themes', `
       <div class="choice-grid">${choiceMarkup('themes', options, state.themes)}</div>
+      ${otherChoiceMarkup('themes')}
       <p class="selection-count" id="selection-count">${copy.selected(state.themes.length, 2)}</p>`);
   }
 
   function availableBlockers() {
     const ids = new Set();
-    state.themes.forEach(theme => (blockerIdsByTheme[theme] || []).forEach(id => ids.add(id)));
+    structuredSelections('themes').forEach(theme => {
+      const aliases = byId(intakeThemeOptions, theme)?.aliases || [];
+      aliases.forEach(alias => (blockerIdsByTheme[alias] || []).forEach(id => ids.add(id)));
+      (extraBlockerIdsByIntakeTheme[theme] || []).forEach(id => ids.add(id));
+    });
     ['unclear-direction', 'too-many-priorities', 'weak-follow-through', 'siloed-thinking', 'weak-accountability'].forEach(id => ids.add(id));
     return data.matching.vocabulary.blockers.filter(item => ids.has(item.id));
   }
 
   function renderBlockers() {
     const options = availableBlockers().map(item => ({ id: item.id, label: item[lang] }));
-    state.blockers = state.blockers.filter(id => options.some(option => option.id === id));
+    state.blockers = state.blockers.filter(id => id === 'other' || options.some(option => option.id === id));
     return questionShell('blockers', `
       <div class="choice-grid">${choiceMarkup('blockers', options, state.blockers)}</div>
+      ${otherChoiceMarkup('blockers')}
       <p class="selection-count" id="selection-count">${copy.selected(state.blockers.length, 3)}</p>`);
   }
 
@@ -462,6 +515,20 @@
         const previousFollowup = getFollowup();
         state[field.name] = selected;
         if (['themes', 'blockers'].includes(field.name) && getFollowup() !== previousFollowup) state.followup = '';
+        const otherStateKey = otherStateKeys[field.name];
+        if (otherStateKey) {
+          const otherSelected = selected.includes('other');
+          const otherField = content.querySelector(`[data-other-field="${otherStateKey}"]`);
+          const otherInput = otherField?.querySelector('input');
+          otherField?.classList.toggle('is-visible', otherSelected);
+          content.querySelector(`[data-other-toggle="${otherStateKey}"]`)?.setAttribute('aria-expanded', String(otherSelected));
+          if (!otherSelected) {
+            state[otherStateKey] = '';
+            if (otherInput) otherInput.value = '';
+          } else if (field.value === 'other') {
+            otherInput?.focus();
+          }
+        }
         const counter = document.getElementById('selection-count');
         if (counter) counter.textContent = copy.selected(selected.length, maximum);
         clearError();
@@ -483,9 +550,21 @@
     let valid = true;
     let message = copy.required;
     if (stepId === 'occasion') valid = state.occasion.trim().length >= 20;
-    if (stepId === 'outcomes') { valid = state.outcomes.length >= 1 && state.outcomes.length <= 3; message = copy.chooseAtLeast; }
-    if (stepId === 'themes') { valid = state.themes.length >= 1 && state.themes.length <= 2; message = copy.chooseAtLeast; }
-    if (stepId === 'blockers') { valid = state.blockers.length >= 1 && state.blockers.length <= 3; message = copy.chooseAtLeast; }
+    if (stepId === 'outcomes') {
+      valid = state.outcomes.length >= 1 && state.outcomes.length <= 3;
+      message = copy.chooseAtLeast;
+      if (valid && state.outcomes.includes('other') && state.outcomeOther.trim().length < 3) { valid = false; message = copy.otherRequired; }
+    }
+    if (stepId === 'themes') {
+      valid = state.themes.length >= 1 && state.themes.length <= 2;
+      message = copy.chooseAtLeast;
+      if (valid && state.themes.includes('other') && state.themeOther.trim().length < 3) { valid = false; message = copy.otherRequired; }
+    }
+    if (stepId === 'blockers') {
+      valid = state.blockers.length >= 1 && state.blockers.length <= 3;
+      message = copy.chooseAtLeast;
+      if (valid && state.blockers.includes('other') && state.blockerOther.trim().length < 3) { valid = false; message = copy.otherRequired; }
+    }
     if (stepId === 'followup') valid = state.followup.trim().length >= 10;
     if (stepId === 'participants') valid = Boolean(state.audience && state.language && Number(state.size) >= 2 && Number(state.size) <= 100);
     if (stepId === 'format') valid = Boolean(state.format);
@@ -581,6 +660,11 @@
       ? { 'management-teams': 'Managementteams', 'executive-teams': 'Directieteams / ExCo', boards: 'Raden van Commissarissen / Toezicht' }
       : { 'management-teams': 'Management Teams', 'executive-teams': 'Executive Teams / ExCo', boards: 'Boards / Supervisory Boards' };
     const catalogById = new Map(data.catalog.modules.map(module => [module.id, module]));
+    const selectedThemeCategories = structuredSelections('themes');
+    const requestedThemes = expandedThemes();
+    const requestedOutcomes = structuredSelections('outcomes');
+    const requestedBlockers = structuredSelections('blockers');
+    if (![selectedThemeCategories, requestedOutcomes, requestedBlockers].some(values => values.length)) return { core: null, supporting: [] };
     const ranked = data.matching.modules.map(metadata => {
       const module = catalogById.get(metadata.moduleId);
       if (!module || metadata.recommendationStatus !== 'active') return null;
@@ -589,20 +673,22 @@
       if (!fit || fit === 'not-suitable') return null;
       const facilitators = resolveFacilitators(module);
       if (!facilitators.length) return null;
-      const primaryThemeScore = proportionalScore(metadata.primaryThemes, state.themes, 25);
-      const unmatchedThemes = state.themes.filter(theme => !metadata.primaryThemes.includes(theme));
+      const moduleCategory = intakeThemeOptions.find(item => item[lang] === module.category)?.id;
+      const categoryMatched = Boolean(moduleCategory && selectedThemeCategories.includes(moduleCategory));
+      const primaryThemeScore = proportionalScore(metadata.primaryThemes, requestedThemes, 25);
+      const unmatchedThemes = requestedThemes.filter(theme => !metadata.primaryThemes.includes(theme));
       const secondaryThemeScore = proportionalScore(metadata.secondaryThemes, unmatchedThemes, 12.5);
-      const themeScore = Math.min(25, primaryThemeScore + secondaryThemeScore);
-      const outcomeScore = proportionalScore(metadata.outcomes, state.outcomes, 30);
-      const blockerScore = proportionalScore(metadata.blockers, state.blockers, 20);
+      const themeScore = categoryMatched ? 25 : Math.min(25, primaryThemeScore + secondaryThemeScore);
+      const outcomeScore = proportionalScore(metadata.outcomes, requestedOutcomes, 30);
+      const blockerScore = proportionalScore(metadata.blockers, requestedBlockers, 20);
       return {
         moduleId: metadata.moduleId,
         title: module.title,
         description: module.description,
         score: themeScore + outcomeScore + blockerScore + 15 + formatScore[fit],
-        matchedOutcomes: overlap(metadata.outcomes, state.outcomes),
-        matchedBlockers: overlap(metadata.blockers, state.blockers),
-        matchedThemes: overlap([...metadata.primaryThemes, ...metadata.secondaryThemes], state.themes),
+        matchedOutcomes: overlap(metadata.outcomes, requestedOutcomes),
+        matchedBlockers: overlap(metadata.blockers, requestedBlockers),
+        matchedThemes: categoryMatched ? [moduleCategory] : overlap([...metadata.primaryThemes, ...metadata.secondaryThemes], requestedThemes),
         proposalRoles: metadata.proposalRoles,
         facilitators
       };
@@ -654,7 +740,7 @@
       : programme.days.map(day => `- ${day[lang]}`).join('\n');
     return [
       copy.resultTitle(labelsFor('outcomes', state.outcomes)[0]),
-      '', copy.yourQuestion, copy.context({ occasion: state.occasion.trim(), audience: copy.audiences[state.audience], size: state.size, outcomes: summary.outcomes }),
+      '', copy.yourQuestion, copy.context({ occasion: state.occasion.trim(), audience: copy.audiences[state.audience], size: state.size, outcomes: summary.outcomes, themes: summary.themes, blockers: summary.blockers }),
       state.followup ? `\n${state.followup}` : '',
       '', copy.initialDirection, copy.recommendation({ module: match.core.title, outcomes: summary.outcomes.toLowerCase() }),
       '', copy.proposedContent,
@@ -678,7 +764,11 @@
     setProgress();
     const match = matchOffsite();
     if (!match.core) {
-      content.innerHTML = `<div class="data-error"><h2 id="question-title">${copy.noMatchTitle}</h2><p>${copy.noMatchText}</p><div class="proposal-actions"><a class="explorer-button" href="mailto:info@intothenxt.com?subject=${encodeURIComponent(copy.emailSubject)}">${copy.directContact}</a><button class="explorer-button explorer-button--secondary" type="button" data-action="restart">${copy.startOver}</button></div></div>`;
+      const summary = answerSummary();
+      const mailBody = `${copy.noMatchEmailIntro}\n\n${copy.emailIntake}\n\n${intakePlainText(summary)}`;
+      const mailto = `mailto:info@intothenxt.com?subject=${encodeURIComponent(copy.emailSubject)}&body=${encodeURIComponent(mailBody)}`;
+      content.innerHTML = `<div class="data-error"><h2 id="question-title">${copy.noMatchTitle}</h2><p>${copy.noMatchText}</p><div class="proposal-actions"><a class="explorer-button" href="${mailto}">${copy.directContact}</a><button class="explorer-button explorer-button--secondary" type="button" data-action="adjust">${copy.adjustAnswers}</button><button class="explorer-button explorer-button--secondary" type="button" data-action="restart">${copy.startOver}</button></div></div>`;
+      content.querySelector('[data-action="adjust"]').addEventListener('click', renderReview);
       content.querySelector('[data-action="restart"]').addEventListener('click', restart);
       return;
     }
@@ -694,7 +784,7 @@
     questions.push(copy.questions.preserve);
     const openQuestions = questions.slice(0, 5);
     const title = copy.resultTitle(labelsFor('outcomes', state.outcomes)[0]);
-    const contextText = copy.context({ occasion: state.occasion.trim(), audience: copy.audiences[state.audience], size: state.size, outcomes: summary.outcomes });
+    const contextText = copy.context({ occasion: state.occasion.trim(), audience: copy.audiences[state.audience], size: state.size, outcomes: summary.outcomes, themes: summary.themes, blockers: summary.blockers });
     proposalText = proposalPlainText(match, facilitators, openQuestions);
     const mailBody = `${copy.emailIntro}\n\n${copy.emailProposal}\n\n${proposalText}\n\n${copy.emailIntake}\n\n${intakePlainText(summary)}`;
     const mailto = `mailto:info@intothenxt.com?subject=${encodeURIComponent(copy.emailSubject)}&body=${encodeURIComponent(mailBody)}`;
@@ -754,6 +844,7 @@
   function restart() {
     Object.assign(state, {
       occasion: '', outcomes: [], themes: [], blockers: [], audience: '', size: 8,
+      outcomeOther: '', themeOther: '', blockerOther: '',
       language: lang, format: '', timing: '', location: '', notes: '', followup: ''
     });
     flowIndex = 0;
