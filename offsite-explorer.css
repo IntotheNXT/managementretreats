@@ -275,6 +275,9 @@
 }
 
 .explorer-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 50px;
   padding: 0 21px;
   border: 1px solid var(--ink);
@@ -284,6 +287,9 @@
   font: inherit;
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: middle;
   cursor: pointer;
 }
 

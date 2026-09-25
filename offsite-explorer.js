@@ -91,6 +91,7 @@
       discuss: 'Bespreek dit voorstel', copyProposal: 'Kopieer voorstel', printProposal: 'Print of bewaar als PDF', startOver: 'Opnieuw beginnen',
       copied: 'Het voorstel is gekopieerd.', copyFailed: 'Kopiëren lukte niet. Selecteer de tekst of gebruik de printfunctie.',
       emailSubject: 'Eerste voorstel management offsite', emailIntro: 'Hallo,\n\nWe hebben de Offsite Verkenner ingevuld en willen dit eerste voorstel graag bespreken.',
+      emailProposal: 'VOLLEDIG VOORSTEL', emailIntake: 'INGEVULDE INTAKE',
       noMatchTitle: 'Deze vraag vraagt om persoonlijk overleg',
       noMatchText: 'De combinatie van onderwerp, doelgroep, taal en format levert nog geen verantwoorde match op. We stellen daarom liever geen generiek programma voor.',
       directContact: 'Neem direct contact op'
@@ -174,6 +175,7 @@
       discuss: 'Discuss this proposal', copyProposal: 'Copy proposal', printProposal: 'Print or save as PDF', startOver: 'Start again',
       copied: 'The proposal has been copied.', copyFailed: 'Copying failed. Select the text or use the print function.',
       emailSubject: 'Initial management offsite proposal', emailIntro: 'Hello,\n\nWe completed the Offsite Explorer and would like to discuss this initial proposal.',
+      emailProposal: 'FULL PROPOSAL', emailIntake: 'COMPLETED INTAKE',
       noMatchTitle: 'This question needs a personal conversation',
       noMatchText: 'The combination of topic, audience, language and format does not yet produce a responsible match. We would rather not suggest a generic programme.',
       directContact: 'Contact us directly'
@@ -620,6 +622,13 @@
     ].filter(value => value !== '').join('\n');
   }
 
+  function intakePlainText(summary) {
+    return Object.entries(summary)
+      .filter(([, value]) => value)
+      .map(([key, value]) => `${copy.reviewLabels[key]}:\n${value}`)
+      .join('\n\n');
+  }
+
   function renderProposal() {
     mode = 'proposal';
     setProgress();
@@ -642,10 +651,9 @@
     const openQuestions = questions.slice(0, 5);
     const title = copy.resultTitle(labelsFor('outcomes', state.outcomes)[0]);
     const contextText = copy.context({ occasion: state.occasion.trim(), audience: copy.audiences[state.audience], size: state.size, outcomes: summary.outcomes });
-    const mailBody = `${copy.emailIntro}\n\n${copy.yourQuestion}:\n${state.occasion.trim()}\n\n${copy.initialDirection}:\n${match.core.title}${match.supporting.length ? ` + ${match.supporting.map(item => item.title).join(' + ')}` : ''}\n\n${copy.reviewLabels.format}: ${summary.format}\n${copy.reviewLabels.participants}: ${summary.participants}\n${copy.reviewLabels.practical}: ${summary.practical}`;
-    const mailto = `mailto:info@intothenxt.com?subject=${encodeURIComponent(copy.emailSubject)}&body=${encodeURIComponent(mailBody)}`;
-
     proposalText = proposalPlainText(match, facilitators, openQuestions);
+    const mailBody = `${copy.emailIntro}\n\n${copy.emailProposal}\n\n${proposalText}\n\n${copy.emailIntake}\n\n${intakePlainText(summary)}`;
+    const mailto = `mailto:info@intothenxt.com?subject=${encodeURIComponent(copy.emailSubject)}&body=${encodeURIComponent(mailBody)}`;
     content.innerHTML = `
       <article class="proposal-view" id="proposal-document">
         <span class="question-kicker">${copy.resultKicker}</span>
