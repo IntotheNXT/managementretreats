@@ -208,7 +208,7 @@
     language: lang, format: '', timing: '', location: '', notes: '', followup: ''
   };
 
-  const baseSteps = ['occasion', 'outcomes', 'themes', 'blockers', 'participants', 'format', 'practical'];
+  const baseSteps = ['occasion', 'themes', 'blockers', 'outcomes', 'participants', 'format', 'practical'];
   let flowIndex = 0;
   let mode = 'questions';
   let data;
@@ -255,7 +255,7 @@
   function getFlow() {
     const followup = getFollowup();
     return followup
-      ? [...baseSteps.slice(0, 4), 'followup', ...baseSteps.slice(4)]
+      ? [...baseSteps.slice(0, 3), 'followup', ...baseSteps.slice(3)]
       : [...baseSteps];
   }
 
@@ -274,8 +274,8 @@
     }
     if (stepId === 'followup') {
       progressLabel.textContent = copy.followup;
-      progressPercent.textContent = '57%';
-      progressBar.style.width = '57%';
+      progressPercent.textContent = '43%';
+      progressBar.style.width = '43%';
       return;
     }
     const number = baseSteps.indexOf(stepId) + 1;
