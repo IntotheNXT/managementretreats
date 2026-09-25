@@ -1,0 +1,116 @@
+[
+  {
+    "id": "strategy-focus",
+    "title": "Managementteam met te veel prioriteiten",
+    "language": "nl",
+    "audience": "management-teams",
+    "format": "full-day",
+    "themes": ["strategy-sharp-choices"],
+    "outcomes": ["clear-strategic-choices", "shared-direction", "prioritised-action-plan", "stronger-execution"],
+    "blockers": ["too-many-priorities", "unclear-direction", "slow-decisions", "weak-follow-through"],
+    "expectedCore": "playing-to-win-defining-where-to-play-how-to-win",
+    "expectedSupportingAny": ["strategy-execution-okrs-ogsm", "rockefeller-habits-high-performance-management-cadence"]
+  },
+  {
+    "id": "execution-discipline",
+    "title": "Strategie verdwijnt in vergaderingen zonder opvolging",
+    "language": "nl",
+    "audience": "executive-teams",
+    "format": "half-day",
+    "themes": ["strategy-sharp-choices", "faster-decision-making"],
+    "outcomes": ["stronger-execution", "clear-accountability", "effective-meetings"],
+    "blockers": ["weak-follow-through", "meeting-overload", "weak-accountability"],
+    "expectedCore": "rockefeller-habits-high-performance-management-cadence"
+  },
+  {
+    "id": "hybrid-organisation",
+    "title": "Rollen en processen herontwerpen rond AI-agents",
+    "language": "nl",
+    "audience": "executive-teams",
+    "format": "two-days",
+    "themes": ["ai-impact-work"],
+    "outcomes": ["human-ai-work-design", "adaptive-operating-model", "clear-accountability", "responsible-ai-use"],
+    "blockers": ["unclear-ai-accountability", "siloed-thinking", "resistance-to-ai", "weak-governance"],
+    "expectedCore": "building-the-hybrid-human-agent-organisation",
+    "expectedSupportingAny": ["ai-governance-oversight"]
+  },
+  {
+    "id": "board-ai-governance",
+    "title": "Board wil keuzes maken over AI-toezicht",
+    "language": "en",
+    "audience": "boards",
+    "format": "two-hours",
+    "themes": ["ai-impact-work"],
+    "outcomes": ["responsible-ai-use", "clear-accountability", "future-readiness"],
+    "blockers": ["weak-governance", "unclear-ai-accountability", "low-ai-literacy"],
+    "expectedCore": "ai-governance-oversight"
+  },
+  {
+    "id": "culture-change",
+    "title": "Gewenste cultuur blijft hangen in woorden",
+    "language": "en",
+    "audience": "executive-teams",
+    "format": "full-day",
+    "themes": ["culture-collaboration"],
+    "outcomes": ["culture-change-agenda", "lived-values-behaviours", "stakeholder-alignment"],
+    "blockers": ["strategy-culture-misalignment", "values-not-lived", "organisational-inertia"],
+    "expectedCore": "current-and-desired-culture-change"
+  },
+  {
+    "id": "avoided-conflict",
+    "title": "MT vermijdt spanning totdat conflicten escaleren",
+    "language": "nl",
+    "audience": "management-teams",
+    "format": "full-day",
+    "themes": ["dilemmas-tensions", "team-development"],
+    "outcomes": ["productive-dialogue", "psychological-safety", "stakeholder-alignment"],
+    "blockers": ["conflict-avoidance", "unproductive-conflict", "avoided-tensions"],
+    "expectedCore": "constructive-conflict-and-dialogue"
+  },
+  {
+    "id": "sustainable-performance",
+    "title": "Hoge prestaties gaan gepaard met chronische overbelasting",
+    "language": "nl",
+    "audience": "management-teams",
+    "format": "half-day",
+    "themes": ["burnout-resilience"],
+    "outcomes": ["sustainable-performance", "leadership-practice", "stronger-team-dynamics"],
+    "blockers": ["chronic-overload", "low-energy-recovery", "weak-accountability"],
+    "expectedCore": "sustainable-performance-burnout-prevention"
+  },
+  {
+    "id": "decision-meetings",
+    "title": "Twee uur om van overleg naar besluiten te komen",
+    "language": "nl",
+    "audience": "management-teams",
+    "format": "two-hours",
+    "themes": ["faster-decision-making", "team-development"],
+    "outcomes": ["effective-meetings", "faster-better-decisions", "clear-accountability"],
+    "blockers": ["meeting-overload", "slow-decisions", "weak-follow-through"],
+    "expectedCore": "effective-meetings-decisions-not-theatre"
+  },
+  {
+    "id": "new-business-model",
+    "title": "Nieuwe groeikansen vertalen naar een onderbouwd businessmodel",
+    "language": "en",
+    "audience": "executive-teams",
+    "format": "full-day",
+    "themes": ["growth-innovation"],
+    "outcomes": ["innovation-opportunities", "validated-options", "future-readiness", "balanced-growth-portfolio"],
+    "blockers": ["weak-customer-insight", "untested-assumptions", "short-term-bias", "fragmented-innovation"],
+    "expectedCore": "business-model-innovation",
+    "expectedSupportingAny": ["innovation-portfolio-management"]
+  },
+  {
+    "id": "change-adoption",
+    "title": "Leiders krijgen onvoldoende beweging achter een verandering",
+    "language": "nl",
+    "audience": "executive-teams",
+    "format": "half-day",
+    "themes": ["leadership", "culture-collaboration"],
+    "outcomes": ["stakeholder-alignment", "culture-change-agenda", "leadership-practice", "improved-communication"],
+    "blockers": ["change-resistance", "weak-stakeholder-support", "messages-do-not-land"],
+    "expectedCore": "leading-change",
+    "expectedSupportingAny": ["influencing-stakeholder-management", "sales-change-understanding-the-four-forces-of-adoption"]
+  }
+]

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offsite Explorer | Management Offsites</title>
+  <meta name="description" content="Answer seven focused questions and receive an initial content proposal for your management offsite.">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.managementoffsites.com/explorer/">
+  <link rel="alternate" hreflang="nl" href="https://www.managementoffsites.com/nl/verkenner/">
+  <link rel="alternate" hreflang="en" href="https://www.managementoffsites.com/explorer/">
+  <link rel="alternate" hreflang="x-default" href="https://www.managementoffsites.com/explorer/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../offsite-explorer.css">
+</head>
+<body class="explorer-page" data-lang="en">
+  <header class="explorer-header">
+    <div class="container explorer-nav">
+      <a class="brand" href="/" aria-label="Management Offsites home">
+        <span class="brand-mark">MO</span>
+        <span class="brand-text">Management<br>Offsites</span>
+      </a>
+      <nav class="explorer-nav-actions" aria-label="Explorer navigation">
+        <a href="/#topics">Explore yourself</a>
+        <a href="mailto:info@intothenxt.com?subject=Discuss%20a%20management%20offsite">Discuss directly</a>
+        <a class="language-link" href="/nl/verkenner/" lang="nl" hreflang="nl" aria-label="Schakel naar Nederlands">NL</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="explorer-main" id="main-content">
+    <div
+      class="container explorer-layout"
+      id="offsite-explorer"
+      data-catalog="../catalog-en.json"
+      data-matching="../data/offsite-matching.json"
+      data-facilitators="../data/facilitators.json"
+      data-template="../data/offsite-proposal-template.json"
+    >
+      <aside class="explorer-intro">
+        <p class="eyebrow">Offsite Explorer</p>
+        <h1>What should your offsite achieve?</h1>
+        <p>Answer seven focused questions. You will then receive an initial proposal with suitable modules, an indicative structure and possible facilitation.</p>
+        <div class="explorer-promise">
+          <span>7 questions</span>
+          <span>About 5 minutes</span>
+          <span>No personal details required</span>
+        </div>
+        <p class="explorer-note">The result is an initial content direction. Availability, pricing and the final programme are discussed personally.</p>
+      </aside>
+
+      <section class="explorer-workspace" aria-labelledby="question-title">
+        <div class="explorer-progress" aria-label="Progress">
+          <div class="explorer-progress-copy">
+            <span id="progress-label">Question 1 of 7</span>
+            <span id="progress-percent">14%</span>
+          </div>
+          <div class="explorer-progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+        </div>
+        <div id="explorer-live" class="sr-only" aria-live="polite"></div>
+        <div id="explorer-content" class="explorer-content">
+          <div class="explorer-loading">Loading the Explorer…</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../offsite-explorer.js" defer></script>
+</body>
+</html>

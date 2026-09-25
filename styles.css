@@ -118,7 +118,7 @@ h3 { font-size: 22px; line-height: 1.2; }
 .hero-panel-top { display: flex; justify-content: space-between; color: #aeb4ae; font-size: 11px; border-bottom: 1px solid rgba(255,255,255,.13); padding-bottom: 22px; letter-spacing: .08em; }
 .hero-panel-link {
   display: block;
-  padding: 28px 0;
+  padding: 24px 0;
   border-bottom: 1px solid rgba(255,255,255,.13);
   text-decoration: none;
 }
@@ -126,6 +126,17 @@ h3 { font-size: 22px; line-height: 1.2; }
 .hero-panel-link small { display: block; color: #aeb4ae; margin-bottom: 9px; font-size: 11px; letter-spacing: .11em; }
 .hero-panel-link strong { display: block; font-family: "DM Serif Display", serif; font-size: 28px; line-height: 1.1; font-weight: 400; }
 .hero-panel-link > span { display: inline-block; margin-top: 14px; color: #d6dcd5; font-size: 12px; font-weight: 700; }
+.hero-panel-link.is-featured {
+  margin: 10px -14px;
+  padding: 22px 14px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--accent);
+  color: var(--ink);
+}
+.hero-panel-link.is-featured small,
+.hero-panel-link.is-featured > span { color: #4c3b29; }
+.hero-panel-link.is-featured + .hero-panel-link { border-top: 1px solid rgba(255,255,255,.13); }
 
 .section-head { max-width: 720px; margin-bottom: 44px; }
 .section-head p:last-child { color: var(--muted); font-size: 17px; margin-top: 18px; }

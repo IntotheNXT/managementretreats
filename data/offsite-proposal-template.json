@@ -1,0 +1,124 @@
+{
+  "version": "2026-09-25",
+  "purpose": "A compact first offsite proposal shown after the guided intake and refined in a personal conversation.",
+  "positioning": {
+    "nl": {
+      "title": "Eerste offsitevoorstel",
+      "disclaimer": "Dit is een eerste inhoudelijke richting op basis van jullie antwoorden. Het is nog geen definitief programma, offerte of bevestiging van beschikbaarheid."
+    },
+    "en": {
+      "title": "Initial offsite proposal",
+      "disclaimer": "This is an initial direction based on your answers. It is not yet a final programme, quotation or confirmation of availability."
+    }
+  },
+  "rules": {
+    "maximumWords": 800,
+    "coreModules": 1,
+    "supportingModulesByFormat": {
+      "two-hours": 1,
+      "half-day": 1,
+      "full-day": 2,
+      "two-days": 2
+    },
+    "maximumFacilitators": 2,
+    "maximumOpenQuestions": 5,
+    "showInternalScores": false,
+    "allowDiagnosis": false,
+    "includePricing": false,
+    "promiseAvailability": false,
+    "requireVisitorConfirmationOfSummary": true,
+    "onlyUseCatalogueModules": true,
+    "onlyUseEligibleFacilitators": true
+  },
+  "sections": [
+    {
+      "id": "context",
+      "required": true,
+      "heading": {"nl": "Jullie vraag", "en": "Your question"},
+      "instruction": "Summarise the occasion, desired outcome, participants, underlying blocker and practical constraints in no more than 100 words. Use the visitor's language and avoid diagnosis."
+    },
+    {
+      "id": "recommendation",
+      "required": true,
+      "heading": {"nl": "Onze eerste aanbeveling", "en": "Our initial recommendation"},
+      "instruction": "Name one recommended direction and explain in plain language why it fits. State what should be different at the end of the offsite."
+    },
+    {
+      "id": "modules",
+      "required": true,
+      "heading": {"nl": "Voorgestelde inhoud", "en": "Proposed content"},
+      "instruction": "Show one core module and only add supporting modules that cover a missing outcome, blocker or theme. Explain each module's contribution in one or two sentences."
+    },
+    {
+      "id": "programme",
+      "required": true,
+      "heading": {"nl": "Indicatieve opbouw", "en": "Indicative structure"},
+      "instruction": "Build the outline from the selected duration blueprint. Describe working blocks and outputs rather than promising a final detailed agenda."
+    },
+    {
+      "id": "facilitators",
+      "required": true,
+      "heading": {"nl": "Mogelijke begeleiding", "en": "Possible facilitation"},
+      "instruction": "Show one or two eligible facilitators. Explain the fit using module eligibility, expertise, audience, language and style. Never imply confirmed availability."
+    },
+    {
+      "id": "assumptions",
+      "required": true,
+      "heading": {"nl": "Aannames en open vragen", "en": "Assumptions and open questions"},
+      "instruction": "Make uncertainty visible. List material assumptions and no more than five questions that should be resolved in the personal conversation."
+    },
+    {
+      "id": "next-step",
+      "required": true,
+      "heading": {"nl": "Samen aanscherpen", "en": "Refine it together"},
+      "instruction": "Invite the visitor to discuss the proposal. Explain that content, facilitation, format and practical arrangements will be refined together."
+    }
+  ],
+  "programmeBlueprints": {
+    "two-hours": {
+      "label": {"nl": "Gerichte managementsessie van twee uur", "en": "Focused two-hour management session"},
+      "blocks": [
+        {"id": "frame", "minutes": 15, "nl": "Vraag en beoogde uitkomst aanscherpen", "en": "Sharpen the question and intended outcome"},
+        {"id": "core", "minutes": 70, "nl": "Werken aan de kernvraag", "en": "Work on the core question"},
+        {"id": "decide", "minutes": 25, "nl": "Keuzes, consequenties en eigenaarschap", "en": "Choices, consequences and ownership"},
+        {"id": "close", "minutes": 10, "nl": "Afspraken en eerstvolgende acties", "en": "Agreements and immediate next actions"}
+      ]
+    },
+    "half-day": {
+      "label": {"nl": "Offsite van een halve dag", "en": "Half-day offsite"},
+      "blocks": [
+        {"id": "frame", "minutes": 30, "nl": "Context, vraag en succescriteria", "en": "Context, question and success criteria"},
+        {"id": "core", "minutes": 90, "nl": "Verdieping op de kernmodule", "en": "Deep work on the core module"},
+        {"id": "break", "minutes": 15, "nl": "Pauze", "en": "Break"},
+        {"id": "translate", "minutes": 45, "nl": "Vertaling naar de eigen praktijk", "en": "Translate insights into the team's context"},
+        {"id": "commit", "minutes": 30, "nl": "Besluiten, eigenaarschap en vervolg", "en": "Decisions, ownership and follow-through"}
+      ]
+    },
+    "full-day": {
+      "label": {"nl": "Offsite van een hele dag", "en": "Full-day offsite"},
+      "blocks": [
+        {"id": "align", "minutes": 45, "nl": "Vraag, context en besliscriteria", "en": "Question, context and decision criteria"},
+        {"id": "core", "minutes": 120, "nl": "Kernmodule: onderzoeken en kiezen", "en": "Core module: explore and choose"},
+        {"id": "support", "minutes": 90, "nl": "Aanvullende dimensie of vertaling", "en": "Supporting dimension or translation"},
+        {"id": "decide", "minutes": 60, "nl": "Besluiten en consequenties", "en": "Decisions and implications"},
+        {"id": "commit", "minutes": 45, "nl": "Eigenaarschap, acties en opvolging", "en": "Ownership, actions and follow-through"}
+      ],
+      "note": {"nl": "Pauzes en lunch worden rond deze werkblokken gepland.", "en": "Breaks and lunch are planned around these working blocks."}
+    },
+    "two-days": {
+      "label": {"nl": "Tweedaagse offsite", "en": "Two-day offsite"},
+      "days": [
+        {
+          "day": 1,
+          "nl": "Begrijpen en kiezen: context, kernvraag, analyse, spanningen en eerste richting.",
+          "en": "Understand and choose: context, core question, analysis, tensions and initial direction."
+        },
+        {
+          "day": 2,
+          "nl": "Ontwerpen en verbinden: verdieping, aanvullende module, besluiten, acties en teamafspraken.",
+          "en": "Design and connect: deepening, supporting module, decisions, actions and team agreements."
+        }
+      ]
+    }
+  }
+}
