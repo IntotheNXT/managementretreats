@@ -92,8 +92,14 @@
       refineText: 'In een persoonlijk gesprek scherpen we de vraag, gewenste uitkomst, deelnemers, begeleiding en praktische inrichting verder aan. Daarna kunnen we een definitief programma en voorstel maken.',
       discuss: 'Bespreek dit voorstel', copyProposal: 'Kopieer voorstel', printProposal: 'Print of bewaar als PDF', startOver: 'Opnieuw beginnen',
       copied: 'Het voorstel is gekopieerd.', copyFailed: 'Kopiëren lukte niet. Selecteer de tekst of gebruik de printfunctie.',
-      emailSubject: 'Eerste voorstel management offsite', emailIntro: 'Hallo,\n\nWe hebben de Offsite Verkenner ingevuld en willen dit eerste voorstel graag bespreken.',
-      emailProposal: 'VOLLEDIG VOORSTEL', emailIntake: 'INGEVULDE INTAKE',
+      emailSubject: 'Eerste voorstel management offsite',
+      emailIntro: 'Hallo,\n\nWe hebben de Offsite Verkenner ingevuld en willen dit eerste voorstel graag bespreken. Hieronder staan onze antwoorden en de voorgestelde inhoudelijke richting.',
+      emailTitle: 'EERSTE VOORSTEL VOOR JULLIE OFFSITE',
+      emailSections: {
+        intake: '1. JULLIE INTAKE', recommendation: '2. EERSTE AANBEVELING', content: '3. VOORGESTELDE INHOUD',
+        programme: '4. INDICATIEVE OPBOUW', facilitation: '5. MOGELIJKE BEGELEIDING', questions: '6. AANNAMES EN OPEN VRAGEN', next: '7. VOLGENDE STAP'
+      },
+      emailLabels: { assumption: 'Aanname', toDiscuss: 'Nog te bespreken' },
       noMatchTitle: 'Deze vraag vraagt om persoonlijk overleg',
       noMatchText: 'De combinatie van onderwerp, doelgroep, taal en format levert nog geen verantwoorde match op. We stellen daarom liever geen generiek programma voor.',
       noMatchEmailIntro: 'Hallo,\n\nWe hebben de Offsite Verkenner ingevuld en willen onze vraag graag persoonlijk bespreken.',
@@ -179,8 +185,14 @@
       refineText: 'In a personal conversation, we refine the question, desired outcome, participants, facilitation and practical arrangements. We can then prepare a final programme and proposal.',
       discuss: 'Discuss this proposal', copyProposal: 'Copy proposal', printProposal: 'Print or save as PDF', startOver: 'Start again',
       copied: 'The proposal has been copied.', copyFailed: 'Copying failed. Select the text or use the print function.',
-      emailSubject: 'Initial management offsite proposal', emailIntro: 'Hello,\n\nWe completed the Offsite Explorer and would like to discuss this initial proposal.',
-      emailProposal: 'FULL PROPOSAL', emailIntake: 'COMPLETED INTAKE',
+      emailSubject: 'Initial management offsite proposal',
+      emailIntro: 'Hello,\n\nWe completed the Offsite Explorer and would like to discuss this initial proposal. Below are our answers and the proposed content direction.',
+      emailTitle: 'INITIAL PROPOSAL FOR YOUR OFFSITE',
+      emailSections: {
+        intake: '1. YOUR INTAKE', recommendation: '2. INITIAL RECOMMENDATION', content: '3. PROPOSED CONTENT',
+        programme: '4. INDICATIVE STRUCTURE', facilitation: '5. POSSIBLE FACILITATION', questions: '6. ASSUMPTIONS AND OPEN QUESTIONS', next: '7. NEXT STEP'
+      },
+      emailLabels: { assumption: 'Assumption', toDiscuss: 'To discuss' },
       noMatchTitle: 'This question needs a personal conversation',
       noMatchText: 'The combination of topic, audience, language and format does not yet produce a responsible match. We would rather not suggest a generic programme.',
       noMatchEmailIntro: 'Hello,\n\nWe completed the Offsite Explorer and would like to discuss our question personally.',
@@ -736,20 +748,27 @@
     const modules = [match.core, ...match.supporting];
     const programme = data.template.programmeBlueprints[state.format];
     const programmeLines = programme.blocks
-      ? programme.blocks.map(block => `- ${block[lang]}`).join('\n')
-      : programme.days.map(day => `- ${day[lang]}`).join('\n');
+      ? programme.blocks.map((block, index) => `${index + 1}. ${block[lang]}`).join('\n')
+      : programme.days.map(day => `${day.day}. ${day[lang]}`).join('\n');
+    const moduleLines = modules.map((module, index) => [
+      `${index === 0 ? copy.coreModule : copy.supportingModule}: ${module.title}`,
+      copy.moduleContribution(module.description, index === 0 ? 'core' : 'supporting')
+    ].join('\n')).join('\n\n');
+    const facilitatorLines = facilitators.length
+      ? facilitators.map(profile => `- ${profile.academyNames[0]}\n  ${copy.facilitatorFit({ name: profile.academyNames[0], language: copy.languages[state.language] })}`).join('\n\n')
+      : copy.noFacilitator;
+    const section = (heading, body) => `${heading}\n----------------------------------------\n${body}`;
     return [
+      copy.emailTitle,
       copy.resultTitle(labelsFor('outcomes', state.outcomes)[0]),
-      '', copy.yourQuestion, copy.context({ occasion: state.occasion.trim(), audience: copy.audiences[state.audience], size: state.size, outcomes: summary.outcomes, themes: summary.themes, blockers: summary.blockers }),
-      state.followup ? `\n${state.followup}` : '',
-      '', copy.initialDirection, copy.recommendation({ module: match.core.title, outcomes: summary.outcomes.toLowerCase() }),
-      '', copy.proposedContent,
-      ...modules.map((module, index) => `${index === 0 ? copy.coreModule : copy.supportingModule}: ${module.title}\n${copy.moduleContribution(module.description, index === 0 ? 'core' : 'supporting')}`),
-      '', copy.programme, programmeLines,
-      '', copy.facilitation, facilitators.length ? facilitators.map(profile => profile.academyNames[0]).join(', ') : copy.noFacilitator,
-      '', copy.assumptions, copy.assumptionText, ...questions.map(question => `- ${question}`),
-      '', copy.refine, copy.refineText, '', copy.disclaimer
-    ].filter(value => value !== '').join('\n');
+      section(copy.emailSections.intake, intakePlainText(summary)),
+      section(copy.emailSections.recommendation, copy.recommendation({ module: match.core.title, outcomes: summary.outcomes.toLowerCase() })),
+      section(copy.emailSections.content, moduleLines),
+      section(copy.emailSections.programme, programmeLines),
+      section(copy.emailSections.facilitation, facilitatorLines),
+      section(copy.emailSections.questions, `${copy.emailLabels.assumption}\n${copy.assumptionText}\n\n${copy.emailLabels.toDiscuss}\n${questions.map(question => `- ${question}`).join('\n')}`),
+      section(copy.emailSections.next, `${copy.refineText}\n\n${copy.disclaimer}`)
+    ].join('\n\n');
   }
 
   function intakePlainText(summary) {
@@ -765,7 +784,7 @@
     const match = matchOffsite();
     if (!match.core) {
       const summary = answerSummary();
-      const mailBody = `${copy.noMatchEmailIntro}\n\n${copy.emailIntake}\n\n${intakePlainText(summary)}`;
+      const mailBody = `${copy.noMatchEmailIntro}\n\n${copy.emailSections.intake}\n----------------------------------------\n${intakePlainText(summary)}`;
       const mailto = `mailto:info@intothenxt.com?subject=${encodeURIComponent(copy.emailSubject)}&body=${encodeURIComponent(mailBody)}`;
       content.innerHTML = `<div class="data-error"><h2 id="question-title">${copy.noMatchTitle}</h2><p>${copy.noMatchText}</p><div class="proposal-actions"><a class="explorer-button" href="${mailto}">${copy.directContact}</a><button class="explorer-button explorer-button--secondary" type="button" data-action="adjust">${copy.adjustAnswers}</button><button class="explorer-button explorer-button--secondary" type="button" data-action="restart">${copy.startOver}</button></div></div>`;
       content.querySelector('[data-action="adjust"]').addEventListener('click', renderReview);
@@ -786,7 +805,7 @@
     const title = copy.resultTitle(labelsFor('outcomes', state.outcomes)[0]);
     const contextText = copy.context({ occasion: state.occasion.trim(), audience: copy.audiences[state.audience], size: state.size, outcomes: summary.outcomes, themes: summary.themes, blockers: summary.blockers });
     proposalText = proposalPlainText(match, facilitators, openQuestions);
-    const mailBody = `${copy.emailIntro}\n\n${copy.emailProposal}\n\n${proposalText}\n\n${copy.emailIntake}\n\n${intakePlainText(summary)}`;
+    const mailBody = `${copy.emailIntro}\n\n${proposalText}`;
     const mailto = `mailto:info@intothenxt.com?subject=${encodeURIComponent(copy.emailSubject)}&body=${encodeURIComponent(mailBody)}`;
     content.innerHTML = `
       <article class="proposal-view" id="proposal-document">
