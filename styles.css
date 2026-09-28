@@ -370,7 +370,9 @@ h3 { font-size: 22px; line-height: 1.2; }
 .location-intro { align-self: end; }
 .location-intro p { margin: 0; color: var(--muted); font-size: 17px; }
 .location-examples { margin-bottom: 14px; }
+.venue-filter-row { margin-bottom: 24px; }
 .location-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.location-card[hidden] { display: none; }
 .venue-directory-link { margin-top: 26px; }
 .venue-directory-link .text-link { flex-wrap: wrap; row-gap: 4px; }
 .venue-directory-link img { display: block; width: 112px; height: auto; }
@@ -383,6 +385,15 @@ h3 { font-size: 22px; line-height: 1.2; }
 .location-copy { padding: 20px 22px 22px; }
 .location-place { margin: 0 0 4px; color: var(--olive); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
 .location-copy h3 { font-family: "DM Serif Display", serif; font-size: 28px; }
+.location-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--olive);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.location-more:hover { color: var(--ink); }
 
 .academy-section { background: var(--sage); }
 .academy-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 100px; align-items: start; }

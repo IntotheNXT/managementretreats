@@ -298,5 +298,25 @@ if (capabilityCatalog) {
     });
 }
 
+
+const venueFilterButtons = document.querySelectorAll('[data-venue-filter]');
+const venueCards = document.querySelectorAll('.location-card[data-venue-category]');
+
+if (venueFilterButtons.length && venueCards.length) {
+  venueFilterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.venueFilter;
+      venueFilterButtons.forEach(item => {
+        const active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      venueCards.forEach(card => {
+        card.hidden = filter !== 'all' && card.dataset.venueCategory !== filter;
+      });
+    });
+  });
+}
+
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
