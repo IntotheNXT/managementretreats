@@ -164,9 +164,17 @@ if (facilitatorSection && !facilitatorSection.querySelector('.facilitator-profil
       </div>`;
     const photo = card.querySelector('.facilitator-photo');
     if (photo && facilitatorPhotoOverrides[slug]) {
-      photo.style.backgroundImage = `url("${facilitatorPhotoOverrides[slug]}")`;
-      photo.style.backgroundSize = 'cover';
-      photo.style.backgroundPosition = 'center';
+      photo.style.backgroundImage = 'none';
+      const img = document.createElement('img');
+      img.src = facilitatorPhotoOverrides[slug];
+      img.alt = name;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'cover';
+      img.style.display = 'block';
+      photo.replaceChildren(img);
     }
     grid.appendChild(card);
   });
