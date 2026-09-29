@@ -145,6 +145,11 @@ if (facilitatorSection && !facilitatorSection.querySelector('.facilitator-profil
   const grid = document.createElement('div');
   grid.className = 'facilitator-profiles';
 
+  const facilitatorPhotoOverrides = {
+    'henri-gentis': '/assets/images/facilitators/henri-gentis.jpg?v=2',
+    'yassine-el-kochta': '/assets/images/facilitators/yassine-el-kochta.jpg?v=2'
+  };
+
   profiles.forEach(([slug, name, role, desc, best, topics]) => {
     const card = document.createElement('article');
     card.className = 'facilitator-card';
@@ -157,6 +162,12 @@ if (facilitatorSection && !facilitatorSection.querySelector('.facilitator-profil
         <p class="facilitator-desc">${desc}</p>
         <p class="facilitator-best"><strong>Best for</strong><span>${best}</span></p>
       </div>`;
+    const photo = card.querySelector('.facilitator-photo');
+    if (photo && facilitatorPhotoOverrides[slug]) {
+      photo.style.backgroundImage = `url("${facilitatorPhotoOverrides[slug]}")`;
+      photo.style.backgroundSize = 'cover';
+      photo.style.backgroundPosition = 'center';
+    }
     grid.appendChild(card);
   });
 
