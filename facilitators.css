@@ -57,6 +57,17 @@
   background-position: center;
 }
 
+.facilitator-photo--henri-gentis {
+  background-image: url("assets/images/facilitators/henri-gentis.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.facilitator-photo--yassine-el-kochta {
+  background-image: url("assets/images/facilitators/yassine-el-kochta.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .facilitator-card-body {
   padding: 20px 20px 18px;
   display: flex;
