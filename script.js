@@ -235,7 +235,7 @@ if (capabilityCatalog) {
       return response.json();
     })
     .then(catalog => {
-      let selectedCategory = catalog.categories[0];
+      let selectedCategory = 'All';
 
       const questionHtml = catalog.questions.map((group, index) => `
         <article class="catalog-question">
