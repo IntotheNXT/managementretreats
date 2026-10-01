@@ -26,7 +26,7 @@
       },
       outcomes: {
         kicker: 'De uitkomst', title: 'Wat moet aan het einde aantoonbaar anders zijn?',
-        help: 'Kies maximaal drie uitkomsten die echt prioriteit hebben.'
+        help: 'Staat jullie uitkomst er niet direct tussen? Beschrijf die bij “Anders”, of kies maximaal drie meer specifieke uitkomsten hieronder.'
       },
       themes: {
         kicker: 'Het onderwerp', title: 'Waar moet de offsite inhoudelijk vooral over gaan?',
@@ -119,7 +119,7 @@
       },
       outcomes: {
         kicker: 'The outcome', title: 'What should be demonstrably different at the end?',
-        help: 'Choose no more than three outcomes that genuinely matter most.'
+        help: 'If the exact outcome is not listed, describe it under “Other”, or choose up to three more specific outcomes below.'
       },
       themes: {
         kicker: 'The topic', title: 'What should the offsite primarily address?',
@@ -409,13 +409,13 @@
       headingId: `outcome-group-${index}`
     }));
     return questionShell('outcomes', `
+      ${otherChoiceMarkup('outcomes')}
       <div class="choice-groups">${groups.map(group => `
         <section class="choice-group" role="group" aria-labelledby="${group.headingId}">
           <h3 class="choice-group-title" id="${group.headingId}">${escapeHtml(group.label[lang])}</h3>
           <div class="choice-grid">${choiceMarkup('outcomes', group.options, state.outcomes)}</div>
         </section>`).join('')}
       </div>
-      ${otherChoiceMarkup('outcomes')}
       <p class="selection-count" id="selection-count">${copy.selected(state.outcomes.length, 3)}</p>`);
   }
 
@@ -628,15 +628,12 @@
         <h2 class="question-title" id="question-title">${copy.review}</h2>
         <p class="question-help">${copy.reviewIntro}</p>
         <dl class="review-list">${rows}</dl>
-        <label class="confirmation"><input type="checkbox" id="confirm-summary"><span>${copy.confirmation}</span></label>
         <div class="explorer-actions">
           <button class="explorer-button explorer-button--secondary" type="button" data-action="back">${copy.back}</button>
-          <button class="explorer-button" type="button" data-action="create" disabled>${copy.create}</button>
+          <button class="explorer-button" type="button" data-action="create">${copy.create}</button>
         </div>
       </div>`;
-    const confirm = document.getElementById('confirm-summary');
     const create = content.querySelector('[data-action="create"]');
-    confirm.addEventListener('change', () => { create.disabled = !confirm.checked; });
     content.querySelectorAll('[data-edit-step]').forEach(button => {
       button.addEventListener('click', () => {
         const targetIndex = getFlow().indexOf(button.dataset.editStep);
