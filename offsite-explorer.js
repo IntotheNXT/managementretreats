@@ -291,6 +291,46 @@
   const expandedThemes = () => structuredSelections('themes')
     .flatMap(id => byId(intakeThemeOptions, id)?.aliases || []);
 
+  const unique = values => [...new Set(values)];
+
+  function normaliseSignalText(value) {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function inferFreeTextSignals() {
+    const explicitOther = [
+      state.themes.includes('other') ? state.themeOther : '',
+      state.outcomes.includes('other') ? state.outcomeOther : '',
+      state.blockers.includes('other') ? state.blockerOther : ''
+    ];
+    const contextualText = [state.occasion, state.followup, state.notes];
+    const haystack = ` ${normaliseSignalText([...explicitOther, ...contextualText].filter(Boolean).join(' '))} `;
+    const signals = { themes: [], outcomes: [], blockers: [], matched: [] };
+
+    (data.matching.freeTextSignals || []).forEach(signal => {
+      const matched = (signal.keywords || []).some(keyword => {
+        const needle = normaliseSignalText(keyword);
+        return needle && haystack.includes(` ${needle} `);
+      });
+      if (!matched) return;
+      signals.matched.push(signal.id);
+      signals.themes.push(...(signal.themes || []));
+      signals.outcomes.push(...(signal.outcomes || []));
+      signals.blockers.push(...(signal.blockers || []));
+    });
+
+    signals.themes = unique(signals.themes);
+    signals.outcomes = unique(signals.outcomes);
+    signals.blockers = unique(signals.blockers);
+    return signals;
+  }
+
   function getFollowup() {
     const hasBlocker = id => state.blockers.includes(id);
     if (hasBlocker('conflict-avoidance') || hasBlocker('unproductive-conflict') || hasBlocker('avoided-tensions')) {
@@ -673,7 +713,8 @@
     const requestedThemes = expandedThemes();
     const requestedOutcomes = structuredSelections('outcomes');
     const requestedBlockers = structuredSelections('blockers');
-    if (![selectedThemeCategories, requestedOutcomes, requestedBlockers].some(values => values.length)) return { core: null, supporting: [] };
+    const freeTextSignals = inferFreeTextSignals();
+    if (![selectedThemeCategories, requestedOutcomes, requestedBlockers, freeTextSignals.themes, freeTextSignals.outcomes, freeTextSignals.blockers].some(values => values.length)) return { core: null, supporting: [], freeTextSignals };
     const ranked = data.matching.modules.map(metadata => {
       const module = catalogById.get(metadata.moduleId);
       if (!module || metadata.recommendationStatus !== 'active') return null;
@@ -690,21 +731,36 @@
       const themeScore = categoryMatched ? 25 : Math.min(25, primaryThemeScore + secondaryThemeScore);
       const outcomeScore = proportionalScore(metadata.outcomes, requestedOutcomes, 30);
       const blockerScore = proportionalScore(metadata.blockers, requestedBlockers, 20);
+      const freeTextPrimaryThemes = overlap(metadata.primaryThemes, freeTextSignals.themes);
+      const freeTextSecondaryThemes = overlap(metadata.secondaryThemes, freeTextSignals.themes);
+      const freeTextOutcomes = overlap(metadata.outcomes, freeTextSignals.outcomes);
+      const freeTextBlockers = overlap(metadata.blockers, freeTextSignals.blockers);
+      const freeTextScore = Math.min(
+        20,
+        freeTextPrimaryThemes.length * 6 +
+        freeTextSecondaryThemes.length * 3 +
+        freeTextOutcomes.length * 8 +
+        freeTextBlockers.length * 5
+      );
       return {
         moduleId: metadata.moduleId,
         title: module.title,
         description: module.description,
-        score: themeScore + outcomeScore + blockerScore + 15 + formatScore[fit],
-        matchedOutcomes: overlap(metadata.outcomes, requestedOutcomes),
-        matchedBlockers: overlap(metadata.blockers, requestedBlockers),
-        matchedThemes: categoryMatched ? [moduleCategory] : overlap([...metadata.primaryThemes, ...metadata.secondaryThemes], requestedThemes),
+        score: themeScore + outcomeScore + blockerScore + 15 + formatScore[fit] + freeTextScore,
+        matchedOutcomes: unique([...overlap(metadata.outcomes, requestedOutcomes), ...freeTextOutcomes]),
+        matchedBlockers: unique([...overlap(metadata.blockers, requestedBlockers), ...freeTextBlockers]),
+        matchedThemes: unique([
+          ...(categoryMatched ? [moduleCategory] : overlap([...metadata.primaryThemes, ...metadata.secondaryThemes], requestedThemes)),
+          ...freeTextPrimaryThemes,
+          ...freeTextSecondaryThemes
+        ]),
         proposalRoles: metadata.proposalRoles,
         facilitators
       };
     }).filter(Boolean).sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
 
     const core = ranked.find(candidate => candidate.proposalRoles.includes('core')) || null;
-    if (!core) return { core: null, supporting: [] };
+    if (!core) return { core: null, supporting: [], freeTextSignals };
     const supportLimit = ['two-hours', 'half-day'].includes(state.format) ? 1 : 2;
     const covered = {
       outcomes: new Set(core.matchedOutcomes), blockers: new Set(core.matchedBlockers), themes: new Set(core.matchedThemes)
@@ -729,7 +785,44 @@
       selected.adds.themes.forEach(value => covered.themes.add(value));
       remaining = remaining.filter(candidate => candidate.moduleId !== selected.moduleId);
     }
-    return { core, supporting };
+    return { core, supporting, freeTextSignals };
+  }
+
+  function rankFacilitators(modules, freeTextSignals = { themes: [] }) {
+    const structuredThemes = expandedThemes();
+    const inferredThemes = freeTextSignals.themes || [];
+    const candidates = new Map();
+
+    modules.forEach((module, index) => {
+      module.facilitators.forEach(profile => {
+        const current = candidates.get(profile.id) || {
+          profile,
+          score: 0,
+          core: false,
+          moduleCount: 0
+        };
+        current.score += index === 0 ? 30 : 20;
+        current.core = current.core || index === 0;
+        current.moduleCount += 1;
+        candidates.set(profile.id, current);
+      });
+    });
+
+    candidates.forEach(candidate => {
+      const expertise = candidate.profile.expertise || [];
+      candidate.score += overlap(expertise, structuredThemes).length * 8;
+      candidate.score += overlap(expertise, inferredThemes).length * 12;
+      candidate.score += Math.max(0, candidate.moduleCount - 1) * 5;
+    });
+
+    return [...candidates.values()]
+      .sort((a, b) =>
+        b.score - a.score ||
+        Number(b.core) - Number(a.core) ||
+        a.profile.academyNames[0].localeCompare(b.profile.academyNames[0])
+      )
+      .slice(0, 2)
+      .map(candidate => candidate.profile);
   }
 
   function programmeMarkup() {
@@ -791,9 +884,7 @@
 
     const summary = answerSummary();
     const modules = [match.core, ...match.supporting];
-    const facilitatorMap = new Map();
-    modules.flatMap(module => module.facilitators).forEach(profile => facilitatorMap.set(profile.id, profile));
-    const facilitators = [...facilitatorMap.values()].slice(0, 2);
+    const facilitators = rankFacilitators(modules, match.freeTextSignals);
     const questions = [copy.questions.decisions, copy.questions.preparation];
     if (state.timing === 'unsure') questions.push(copy.questions.timing);
     if (!state.location.trim()) questions.push(copy.questions.location);
